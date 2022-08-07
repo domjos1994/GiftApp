@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="de.domjos.gift_app.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:name="de.domjos.gift_app.fragments.FirstFragment"
+        android:label="@string/main"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -17,8 +17,8 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="de.domjos.gift_app.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:name="de.domjos.gift_app.fragments.SecondFragment"
+        android:label="@string/test"
         tools:layout="@layout/fragment_second">
 
         <action

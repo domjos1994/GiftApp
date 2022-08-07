@@ -1,4 +1,4 @@
-package de.domjos.gift_app
+package de.domjos.gift_app.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.FragmentSecondBinding
 
 /**
