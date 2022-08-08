@@ -2,6 +2,10 @@ package de.domjos.gift_app.customControls
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
+import android.text.Html
+import android.text.Spannable
+import android.text.Spanned
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TextView
@@ -40,7 +44,18 @@ class GiftItem : ConstraintLayout {
                 lblHeader.text = a.getString(R.styleable.GiftItem_header)
             }
             if (a.hasValue(R.styleable.GiftItem_description)) {
-                lblDescription.text = a.getString(R.styleable.GiftItem_description)
+                val content: Spanned? =
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        Html.fromHtml(
+                            a.getString(R.styleable.GiftItem_description),
+                            Html.FROM_HTML_MODE_COMPACT
+                        )
+                    } else {
+                        Html.fromHtml(
+                            a.getString(R.styleable.GiftItem_description)
+                        )
+                    }
+                lblDescription.text = content
             }
             if (a.hasValue(R.styleable.GiftItem_keyword)) {
                 lblKeyword.text = a.getString(R.styleable.GiftItem_keyword)
@@ -50,6 +65,9 @@ class GiftItem : ConstraintLayout {
             }
             if (a.hasValue(R.styleable.GiftItem_negative)) {
                 lblNegative.text = a.getString(R.styleable.GiftItem_negative)
+            }
+            if (a.hasValue(R.styleable.GiftItem_bible)) {
+                lblBible.text = a.getString(R.styleable.GiftItem_bible)
             }
         } catch (ex: Exception) {}
     }

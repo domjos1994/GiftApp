@@ -1,12 +1,13 @@
 package de.domjos.gift_app.fragments
 
+import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import de.domjos.gift_app.customControls.Question
 import java.util.*
 
-open class TestPageFragment() : Fragment() {
+abstract class TestPageFragment() : Fragment() {
     protected var cl: ConstraintLayout? = null
 
     fun countUnsetQuestions(): Int {
@@ -30,4 +31,6 @@ open class TestPageFragment() : Fragment() {
         }
         return results
     }
+
+    abstract fun save(context: Context)
 }

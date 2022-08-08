@@ -52,31 +52,36 @@ class Question : ConstraintLayout {
             }
 
             if(a.hasValue(R.styleable.Question_choice)) {
-                setView(lblUnset, false)
-                setView(lblNever, false)
-                setView(lblMuchRarely, false)
-                setView(lblRarely, false)
-                setView(lblSometimes, false)
-                setView(lblOften, false)
-                setView(lblMuchOften, false)
-                setView(lblAlways, false)
-                choice = a.getInt(R.styleable.Question_choice, -1)
-                when(choice) {
-                    -1 ->setView(lblUnset, true)
-                    0 -> setView(lblNever, true)
-                    1 -> setView(lblMuchRarely, true)
-                    2 -> setView(lblRarely, true)
-                    3 -> setView(lblSometimes, true)
-                    4 -> setView(lblOften, true)
-                    5 -> setView(lblMuchOften, true)
-                    6 -> setView(lblAlways, true)
-                }
+                setChoice(a.getInt(R.styleable.Question_choice, -1))
             }
         } catch (ex: Exception) {}
     }
 
     fun getChoice(): Int {
         return choice
+    }
+
+    fun setChoice(choice: Int) {
+        this.choice = choice
+
+        setView(lblUnset, false)
+        setView(lblNever, false)
+        setView(lblMuchRarely, false)
+        setView(lblRarely, false)
+        setView(lblSometimes, false)
+        setView(lblOften, false)
+        setView(lblMuchOften, false)
+        setView(lblAlways, false)
+        when(choice) {
+            -1 ->setView(lblUnset, true)
+            0 -> setView(lblNever, true)
+            1 -> setView(lblMuchRarely, true)
+            2 -> setView(lblRarely, true)
+            3 -> setView(lblSometimes, true)
+            4 -> setView(lblOften, true)
+            5 -> setView(lblMuchOften, true)
+            6 -> setView(lblAlways, true)
+        }
     }
 
     fun getText(): String {

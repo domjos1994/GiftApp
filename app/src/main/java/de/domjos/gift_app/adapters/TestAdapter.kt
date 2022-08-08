@@ -8,13 +8,10 @@ import de.domjos.gift_app.R
 import de.domjos.gift_app.fragments.*
 import java.util.*
 
-class TestAdapter : FragmentPagerAdapter {
-    private var fragments: LinkedList<TestPageFragment>
-    private var context: Context
+class TestAdapter(fm: FragmentManager, private var context: Context) : FragmentPagerAdapter(fm) {
+    private var fragments: LinkedList<TestPageFragment> = LinkedList<TestPageFragment>()
 
-    constructor(fm: FragmentManager, context: Context) : super(fm) {
-        this.context = context
-        fragments = LinkedList<TestPageFragment>()
+    init {
         fragments.add(TestPage1Fragment())
         fragments.add(TestPage2Fragment())
         fragments.add(TestPage3Fragment())
@@ -40,6 +37,12 @@ class TestAdapter : FragmentPagerAdapter {
         return ""
     }
 
+    fun save() {
+        for(i in 0..5) {
+            fragments[i].save(this.context)
+        }
+    }
+
     fun getUnsetCount(position: Int): Int {
         return fragments[position].countUnsetQuestions()
     }
@@ -56,6 +59,7 @@ class TestAdapter : FragmentPagerAdapter {
                 results[i] = results[i] + list[i]
             }
         }
+        results.sort()
         return results
     }
 

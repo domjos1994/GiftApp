@@ -1,6 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giAdministration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_admin_header"
+            app:description="@string/result_admin_description"
+            app:keyword="@string/result_admin_keyword"
+            app:target="@string/result_admin_target"
+            app:negative="@string/result_admin_negative"
+            app:bible="@string/result_admin_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giMindDifference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_mind_difference_header"
+            app:description="@string/result_mind_difference_description"
+            app:keyword="@string/result_mind_difference_keyword"
+            app:target="@string/result_mind_difference_target"
+            app:negative="@string/result_mind_difference_negative"
+            app:bible="@string/result_mind_difference_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giEncourage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_encourage_header"
+            app:description="@string/result_encourage_description"
+            app:keyword="@string/result_encourage_keyword"
+            app:target="@string/result_encourage_target"
+            app:negative="@string/result_encourage_negative"
+            app:bible="@string/result_encourage_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giEvangelist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_evangelist_header"
+            app:description="@string/result_evangelist_description"
+            app:keyword="@string/result_evangelist_keyword"
+            app:target="@string/result_evangelist_target"
+            app:negative="@string/result_evangelist_negative"
+            app:bible="@string/result_evangelist_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giBelieve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_believe_header"
+            app:description="@string/result_believe_description"
+            app:keyword="@string/result_believe_keyword"
+            app:target="@string/result_believe_target"
+            app:negative="@string/result_believe_negative"
+            app:bible="@string/result_believe_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giGive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_give_header"
+            app:description="@string/result_give_description"
+            app:keyword="@string/result_give_keyword"
+            app:target="@string/result_give_target"
+            app:negative="@string/result_give_negative"
+            app:bible="@string/result_give_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_help_header"
+            app:description="@string/result_help_description"
+            app:keyword="@string/result_help_keyword"
+            app:target="@string/result_help_target"
+            app:negative="@string/result_help_negative"
+            app:bible="@string/result_help_bible"/>
+
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giUnderstanding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_understanding_header"
+            app:description="@string/result_understanding_description"
+            app:keyword="@string/result_understanding_keyword"
+            app:target="@string/result_understanding_target"
+            app:negative="@string/result_understanding_negative"
+            app:bible="@string/result_understanding_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giLeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_leader_header"
+            app:description="@string/result_leader_description"
+            app:keyword="@string/result_leader_keyword"
+            app:target="@string/result_leader_target"
+            app:negative="@string/result_leader_negative"
+            app:bible="@string/result_leader_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giGrace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_grace_header"
+            app:description="@string/result_grace_description"
+            app:keyword="@string/result_grace_keyword"
+            app:target="@string/result_grace_target"
+            app:negative="@string/result_grace_negative"
+            app:bible="@string/result_grace_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giProphet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_prophet_header"
+            app:description="@string/result_prophet_description"
+            app:keyword="@string/result_prophet_keyword"
+            app:target="@string/result_prophet_target"
+            app:negative="@string/result_prophet_negative"
+            app:bible="@string/result_prophet_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giServant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_servant_header"
+            app:description="@string/result_servant_description"
+            app:keyword="@string/result_servant_keyword"
+            app:target="@string/result_servant_target"
+            app:negative="@string/result_servant_negative"
+            app:bible="@string/result_servant_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giShepherd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_shepherd_header"
+            app:description="@string/result_shepherd_description"
+            app:keyword="@string/result_shepherd_keyword"
+            app:target="@string/result_shepherd_target"
+            app:negative="@string/result_shepherd_negative"
+            app:bible="@string/result_shepherd_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_teacher_header"
+            app:description="@string/result_teacher_description"
+            app:keyword="@string/result_teacher_keyword"
+            app:target="@string/result_teacher_target"
+            app:negative="@string/result_teacher_negative"
+            app:bible="@string/result_teacher_bible"/>
+
+        <de.domjos.gift_app.customControls.GiftItem
+            android:id="@+id/giWisdom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            app:header="@string/result_wisdom_header"
+            app:description="@string/result_wisdom_description"
+            app:keyword="@string/result_wisdom_keyword"
+            app:target="@string/result_wisdom_target"
+            app:negative="@string/result_wisdom_negative"
+            app:bible="@string/result_wisdom_bible"/>
+    </LinearLayout>
+</ScrollView>

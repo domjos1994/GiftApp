@@ -19,5 +19,6 @@
         <attr name="keyword" format="string"/>
         <attr name="target" format="string"/>
         <attr name="negative" format="string"/>
+        <attr name="bible" format="string"/>
     </declare-styleable>
 </resources>

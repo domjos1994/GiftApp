@@ -1,10 +1,14 @@
 package de.domjos.gift_app.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
+import de.domjos.gift_app.Settings
+import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.databinding.FragmentTestPage1Binding
 
 class TestPage1Fragment : TestPageFragment() {
@@ -27,5 +31,25 @@ class TestPage1Fragment : TestPageFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.cl = _binding?.constraintLayout
+
+        val settings: Settings = Settings(view.context)
+        var i = 0
+        super.cl?.forEach {
+            val item: Question = it as Question
+            item.setChoice(settings.getSetting("page1$i", -1))
+
+            i++
+        }
+    }
+
+    override fun save(context: Context) {
+        val settings = Settings(context)
+        var i = 0
+        super.cl?.forEach {
+            val item: Question = it as Question
+            settings.saveSetting("page1$i", item.getChoice())
+
+            i++
+        }
     }
 }

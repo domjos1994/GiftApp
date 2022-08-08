@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import de.domjos.gift_app.R
@@ -50,6 +51,8 @@ class TestFragment : Fragment() {
             badge?.number = 15
         }
 
+        val controller = findNavController()
+
         tbl.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -67,19 +70,18 @@ class TestFragment : Fragment() {
         })
 
         _binding?.cmdReport?.setOnClickListener {
-            Toast.makeText(context, testAdapter?.getResults()?.joinToString(", "), Toast.LENGTH_LONG).show()
-
             val list: LinkedList<Int>? = testAdapter?.getResults()
             val args = Bundle()
             for(i in 0 until list!!.size) {
                 args.putInt(i.toString(), list[i])
             }
-            findNavController().navigate(R.id.action_SecondFragment_to_ThirdFragment, args)
+            controller.navigate(R.id.action_SecondFragment_to_ThirdFragment, args)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        (_binding?.viewPager?.adapter as TestAdapter).save()
         _binding = null
     }
 }

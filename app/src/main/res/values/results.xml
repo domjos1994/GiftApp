@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="result_admin_header" translatable="false">
+        Administration
+    </string>
+    <string name="result_admin_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Organisiert gerne oder delegiert</li>
+                <li>Aufgabenorientiert</li>
+                <li>
+                    Konzentriert sich auf die
+                    Teilnahme aller Teammitglieder
+                </li>
+                <li>Sieht das Gesamtbild</li>
+                <li>Versucht jeden anzuleiten</li>
+                <li>
+                    Nicht immer selber sehr
+                    organisiert oder ordentlich
+                </li>
+                <li>
+                    Entscheidet was zuerst getan
+                    werden muss, und vergibt die
+                    Aufgaben an die meist
+                    qualifizierteste Person
+                </li>
+                <li>
+                    Vermittelt (Aufgaben)
+                    Bewusste Autoritätsstruktur –
+                    Sicherheit in klar definierten
+                    Funktionen
+                </li>
+                <li>
+                    Neigt dazu zuzuschauen statt
+                    selbst mit anzupacken
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_admin_keyword" translatable="false">
+        Initiator
+    </string>
+    <string name="result_admin_negative" translatable="false">
+        Erwartet zu viel
+    </string>
+    <string name="result_admin_target" translatable="false">
+        Leiten durch Vorleben, nicht durch Manipulation
+    </string>
+    <string name="result_admin_bible" translatable="false">
+        Röm. 12:8; I Cor. 12:28; Apost. 6:1-7
+    </string>
+
+    <string name="result_mind_difference_header" translatable="false">
+        Gabe der Geisterunterscheidung
+    </string>
+    <string name="result_mind_difference_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Haben die ungewöhnliche Gabe, durch Verwirrungen und Probleme zu sehen und es auf den Punkt zu bringen</li>
+                <li>Bieten Lösungen an</li>
+                <li>
+                    Machen sich Sorgen über was falsch und was richtig ist
+                </li>
+                <li>Neigen dazu Menschen und ihre Motive zu kennen, ohne die Person wirklich zu kennen</li>
+                <li>Hören gut zu und erkennen auch kleine, scheinbar unwichtige Details, die Licht in Situationen oder Bedürfnisse bringen</li>
+                <li>Meist ernster als Andere</li>
+                <li>Können den Unterschied zwischen Gut und Böse, Falsch und Richtig erkennen</li>
+                <li>Stellen Fragen, geben Antwort und Rastschläge</li>
+                <li>Bringen Probleme mit dem Missachten biblischer Prinzipien in Verbindung</li>
+                <li>Andere trauen ihrem Urteil</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_mind_difference_keyword" translatable="false">
+        Zuhörer
+    </string>
+    <string name="result_mind_difference_negative" translatable="false">
+        zu kritisch
+    </string>
+    <string name="result_mind_difference_target" translatable="false">
+        bring zuerst mehr Informationen in Erfahrung bevor du dein Urteil mitteilst
+    </string>
+    <string name="result_mind_difference_bible" translatable="false">
+        I Cor. 12:7,10b; I Cor. 2:4
+    </string>
+
+    <string name="result_encourage_header" translatable="false">
+        Ermutiger
+    </string>
+    <string name="result_encourage_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Ermutigen/ trösten andere</li>
+                <li>Neigen dazu Ratschläge zu geben</li>
+                <li>Motivieren andere und regen ihren Glauben an</li>
+                <li>Machen oft den ersten Schritt</li>
+                <li>Sagen was du mit der Wahrheit tun solltest</li>
+                <li>Sorgen/ kümmern sich sehr stark um andere</li>
+                <li>Werden oft als Seelsorger ausgesucht</li>
+                <li>Mitmenschen empfinden sie als freundlich, hilfsbereit und praktisch veranlagt</li>
+                <li>Nützen ihre Gabe in Kommunikation um Wissen weiter zu geben</li>
+                <li>Wollen andere wachsen sehn und motivieren sie dabei</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_encourage_keyword" translatable="false">
+        Ermutigend
+    </string>
+    <string name="result_encourage_negative" translatable="false">
+        Redet zu viel
+    </string>
+    <string name="result_encourage_target" translatable="false">
+        Wende Wahrheit an ohne Erwartungen zu setzen
+    </string>
+    <string name="result_encourage_bible" translatable="false">
+        Röm. 12:6,8; Apostl. 11:23-24; Heb. 10:24-25
+    </string>
+
+    <string name="result_evangelist_header" translatable="false">
+        Evangelist
+    </string>
+    <string name="result_evangelist_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Hat das Gefühl Seelen gewinnen zu müssen</li>
+                <li>Gläubigen auf eine klare und einfache Art und Weise weiter zu geben, so dass diese reagieren</li>
+                <li>Sie sorgen sich um die Verlohrenen und diese sterbende Welt und bezeugen deshalb ihren Glauben</li>
+                <li>Haben das Verlagen in Diensten involviert zu sein, die Menschen für Christus gewinnen</li>
+                <li>Wollen das jede Predigt das Evangelium und einen Aufruf enthält</li>
+                <li>Mission und Einsätze sind sehr wichtig für sie</li>
+                <li>Möchten gerne jedem eine Antwortauf ihre Frage geben</li>
+                <li>Unterhaltungen drehen sich meist um den Sinn und die Werte der Ewigkeit</li>
+                <li>Wo immer sie hingehn werden Menschen errettet</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_evangelist_keyword" translatable="false">
+        Dynamisch
+    </string>
+    <string name="result_evangelist_negative" translatable="false">
+        Übereifrig
+    </string>
+    <string name="result_evangelist_target" translatable="false">
+        Qualität nicht Quantität bei Jüngerschaft
+    </string>
+    <string name="result_evangelist_bible" translatable="false">
+        Eph. 4:7-11; Apostl. 8:26-40
+    </string>
+
+    <string name="result_believe_header" translatable="false">
+        Glaube
+    </string>
+    <string name="result_believe_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Offensichtliche Gabe Gott in den noch so negativen Umständen zu vertrauen</li>
+                <li>Tiefe Abhängigkeit von Gott und seinem Wort</li>
+                <li>Oft ist ihr Lieblings Vers: “ Glauben aber kommt durch die Predigt, predigen aber kommt durch das Wort Christi” (Röm. 1 ,17)</li>
+                <li>Glauben sehr stark an die Kraft und die Gegenwart Gottes</li>
+                <li>Dehnen den Glauben und die Hingabe Anderer</li>
+                <li>Ermutigen Andere aus ihrem Glauben heraus zu handeln</li>
+                <li>Vorderen Andere heraus ihren Glauben zu weiten</li>
+                <li>Kämpfen mit Stolz</li>
+                <li>Fähig Gottes Visionen zu Sehen, ohne einen sichtbaren Beweis zu benötigen</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_believe_keyword" translatable="false">
+        Optimist
+    </string>
+    <string name="result_believe_negative" translatable="false">
+        Vertrauen manchmal zu sehr auf ihren Glauben/ Stolz aufihren Glauben
+    </string>
+    <string name="result_believe_target" translatable="false">
+        Glauben und Taten verbinden/ Geduld mit Anderen
+    </string>
+    <string name="result_believe_bible" translatable="false">
+         I Cor. 12:7, 9; Mat.8:5-16; Heb. 11:1
+    </string>
+
+    <string name="result_give_header" translatable="false">
+        Geben
+    </string>
+    <string name="result_give_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>Ernsthaft besorgt wegen Finanziellen Problemen</li>
+                <li>Geben großzügig von was sie haben</li>
+                <li>Achten darauf wie Geld ausgegeben bzw. gespart wird</li>
+                <li>Geben nicht immer dort wo am “lautesten geschrien” wird sondern wo es am nötigsten gebraucht wird.</li>
+                <li>Einzigartiges Verständnis über Finanzen</li>
+                <li>Neigen dazu konservativ und gewissenhaft zu sein</li>
+                <li>Wollen wirklich von ganzem Herzen ein guter Haushalter sein</li>
+                <li>Interessieren sich wirklich für die Nöte von Fremden/ ihrer Arbeit/ ihrem Dienst</li>
+                <li>Geben im Stillen</li>
+                <li>Wollen keinen Dank</li>
+                <li>Gibt nicht aus Emotionen heraus</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_give_keyword" translatable="false">
+        Haushalter
+    </string>
+    <string name="result_give_negative" translatable="false">
+        Macht des Geldes
+    </string>
+    <string name="result_give_target" translatable="false">
+        treue Haushalterschaft/ kein finanzieller Druck
+    </string>
+    <string name="result_give_bible" translatable="false">
+          Rom.12:6,8b; Apostl. 4:32-35; 2Cor. 9:7-8
+    </string>
+
+    <string name="result_help_header" translatable="false">
+        Helfen
+    </string>
+    <string name="result_help_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Ähnlich wie die Gabe des Dienens
+                    Erkennt bestimmte Nöte und
+                    versucht sie zu erfüllen
+                </li>
+                <li>
+                    Öffnet sein Haus, versorgt mit
+                    Essen, sehr Gastfreundlich
+                </li>
+                <li>
+                    Tut etwas nicht weil es getan
+                    werden muss, sondern weil er
+                    jemanden damit helfen will
+                </li>
+                <li>
+                    Kein Problem wenn ihn jemand
+                    in letzter Sekunde um etwas bittet
+                </li>
+                <li>
+                    Helfen auch obwohl sie wissen,
+                    das ihr Gegenüber sie ausnutzt
+                </li>
+                <li>
+                    Haben kein Problem damit wenn
+                    Hilfe nicht erwidert wird
+                </li>
+                <li>Wollen keine Anerkennung für ihre Taten</li>
+                <li>
+                    Haben Mitgefühl für die
+                    Bedürftigen und Armen
+                </li>
+                <li>Wollen Andere segnen</li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_help_keyword" translatable="false">
+        Selbstlos
+    </string>
+    <string name="result_help_negative" translatable="false">
+        Laden sich zu viel auf
+    </string>
+    <string name="result_help_target" translatable="false">
+        Helfen ohne das die eigene Familie darunter leidet
+    </string>
+    <string name="result_help_bible" translatable="false">
+          I Cor. 12:28;
+    </string>
+
+    <string name="result_understanding_header" translatable="false">
+        Worte der Erkenntnis
+    </string>
+    <string name="result_understanding_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Übernatürliche Offenbarungen von
+                    Gott über bestimmte Sachen die
+                    man von Selbst nicht wissen kann
+                </li>
+                <li>
+                    Können die Wahrheit von Gottes
+                    Wort in die Heutige Zeit bringen
+                </li>
+                <li>
+                    Können Andere teilweise mit ihrem Wort der
+                    Erkenntnis überwältigen statt
+                    Gottes Willen zu Offenbaren
+                </li>
+                <li>
+                    Bereit, willig und fähig ihre
+                    theologische Sicht auf gewisse
+                    Sachen zu verteidigen
+                </li>
+                <li>
+                    Neue Offenbarungen beim
+                    studieren von Gottes Wort
+                </li>
+                <li>
+                    Verstehen schwierige Themen,
+                    haben leicht eine Offenbarung
+                    über Wahrheit
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_understanding_keyword" translatable="false">
+        göttliches Verständnis
+    </string>
+    <string name="result_understanding_negative" translatable="false">
+        Können Anderen Minderwertigkeit oder Ignoranz vermitteln
+    </string>
+    <string name="result_understanding_target" translatable="false">
+        Leben verändern statt Menschen beeindrucken
+    </string>
+    <string name="result_understanding_bible" translatable="false">
+          I Cor. 12:7-8, 8:1-2
+    </string>
+
+    <string name="result_leader_header" translatable="false">
+        Leiter
+    </string>
+    <string name="result_leader_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Ungewöhnlich starke Gabe,
+                    Andere zu beeinflussen
+                </li>
+                <li>
+                    Kann unabhängig und ausdauernd
+                    Andere in eine bestimmte
+                    Richtung führen oder zu einem
+                    Ziel leiten
+                </li>
+                <li>
+                    Fallen auf und vertreten ihre
+                    Meinung
+                </li>
+                <li>
+                    Haben mehrere Talente und
+                    führen ihre Team zum Erfolg
+                </li>
+                <li>
+                    Aufgabenorientiert
+                </li>
+                <li>
+                    Brauchen mehr Geduld und
+                    Sanftmut denjenigen gegenüber,
+                    die nicht so wie sie reagieren
+                </li>
+                <li>
+                    Gute Motivatoren
+                </li>
+                <li>
+                    Fähig Gottes Ziele und Pläne
+                    zu visionieren und diese
+                    umzusetzen
+                </li>
+                <li>
+                    Erledigen die Aufgabe meist nur
+                    ungern selbst
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_leader_keyword" translatable="false">
+        Träumer
+    </string>
+    <string name="result_leader_negative" translatable="false">
+        Zu Fordernd und Ungeduldig
+    </string>
+    <string name="result_leader_target" translatable="false">
+         Leite durch eigenes Beispiel/bereit zu dienen
+    </string>
+    <string name="result_leader_bible" translatable="false">
+          Röm. 12:6,8c; Joh 13:13-17; Heb. 13:17
+    </string>
+
+    <string name="result_grace_header" translatable="false">
+        Gnade
+    </string>
+    <string name="result_grace_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Leiden ernsthaft mit Anderen mit
+                    Sehr sensibel
+                </li>
+                <li>
+                    Wollen den Schmerz Anderer
+                    lindern
+                </li>
+                <li>
+                    Sorgen sich mehr um die Person
+                    als um das Problem
+                </li>
+                <li>
+                    Fokussieren sich auf die Person die
+                    verletzt ist
+                </li>
+                <li>
+                    Dienen indem sie „wirklich da
+                    sind“ wenn sie gebraucht werden
+                </li>
+                <li>
+                    Sympathie und Empathie sind ihre
+                    Spezialität
+                </li>
+                <li>
+                    Während Andere sich mehr um
+                    das „wieso, weshalb,warum und
+                    wie“ sorgen, fragen sie nach dem
+                    „wer“ braucht meine Aufmerksamkeit
+                </li>
+                <li>
+                    Ziehen Menschen an, die innere
+                    Probleme haben
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_grace_keyword" translatable="false">
+        Umsorgend
+    </string>
+    <string name="result_grace_negative" translatable="false">
+        Übersensibel
+    </string>
+    <string name="result_grace_target" translatable="false">
+         Kluge Umsicht statt dummer Handlung
+    </string>
+    <string name="result_grace_bible" translatable="false">
+         Röm. 12:6,8d; Mat. 5:7
+    </string>
+
+    <string name="result_prophet_header" translatable="false">
+        Prophet
+    </string>
+    <string name="result_prophet_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Haben die selbe Ernsthaftigkeit
+                    und Direktheit der Wahrheit
+                    gegenüber, wie die Propheten im
+                    Alten Testament
+                </li>
+                <li>
+                    Wenn durch den Heiligen Geist
+                    geführt, kann es sehr kraftvoll
+                    genutzt werden um zu bestätigen,
+                    zurechtzuweisen oder zu erheben
+                </li>
+                <li>
+                    Sagen die Wahrheit egal was die
+                    Anderen davon halten
+                </li>
+                <li>
+                    Wollen Andere mit dem
+                    konfrontieren, was sie denken das
+                    richtig sei
+                </li>
+                <li>
+                    Sehen alles Schwarz-Weis, Falsch-
+                    Richtig
+                </li>
+                <li>
+                    Sind Wegweisend, sprechen die
+                    Wahrheit aus oder stehen für
+                    etwas Besonderes ein
+                </li>
+                <li>
+                    Gottgegebene Gabe Sünde
+                    zu Identifizieren und zu definieren
+                </li>
+                <li>
+                    Ziehen Andere zur Rechenschaft
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_prophet_keyword" translatable="false">
+        Mutig
+    </string>
+    <string name="result_prophet_negative" translatable="false">
+        Kämpfer
+    </string>
+    <string name="result_prophet_target" translatable="false">
+         Deklariere Wahrheit/ nicht Spaltung bringen
+    </string>
+    <string name="result_prophet_bible" translatable="false">
+         Eph. 4:7,11; I Cor. 14:1,3; 2 Pet. 1:19-21
+    </string>
+
+    <string name="result_servant_header" translatable="false">
+        Diener
+    </string>
+    <string name="result_servant_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Dienen treu im Hintergrund
+                </li>
+                <li>
+                    Wollen Andere Segnen um dem
+                    Herrn zu Dienen
+                </li>
+                <li>
+                    Bereit alles zu tun um die Aufgabe
+                    zu erledigen
+                </li>
+                <li>
+                    Tun was kein Anderer tun will
+                </li>
+                <li>
+                    Anpassungsfähig
+                </li>
+                <li>
+                    Die Größe der Aufgabe, ob klein
+                    oder groß ist unwichtig
+                </li>
+                <li>
+                    Halten Anderen den Rücken frei
+                    um „wichtigeres“ zu tun
+                </li>
+                <li>
+                    Sagen nur schwer „Nein“
+                </li>
+                <li>
+                    Sehen ihre Aufgabe darin andere zu unterstützen
+                </li>
+                <li>
+                    Sehen die Vorlieben und
+                    Abneigungen von Anderen
+                </li>
+                <li>
+                    Körperliche Ausdauer beim
+                    erledigen der Aufgabe, wenn
+                    Andere schon längst aufgegeben
+                    haben
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_servant_keyword" translatable="false">
+        Macher
+    </string>
+    <string name="result_servant_negative" translatable="false">
+        machen zu viel
+    </string>
+    <string name="result_servant_target" translatable="false">
+         sei ein Diener kein Märtyrer
+    </string>
+    <string name="result_servant_bible" translatable="false">
+         I Cor. 12:28; Apostl.6:1-3; Röm.16:1-2
+    </string>
+
+    <string name="result_shepherd_header" translatable="false">
+        Hirte/Pastor
+    </string>
+    <string name="result_shepherd_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Können das geistliche Leben und
+                    den geistigen Wachstum Anderer
+                    Überwachen und sie durch Lehre
+                    in eine Reife führen
+                </li>
+                <li>
+                    Möchten Andere dazu anleiten
+                    dem Herrn zu dienen
+                </li>
+                <li>
+                    Leiten gerne
+                </li>
+                <li>
+                    Beeinflussen und ermutigen
+                    Andere zusammen zu arbeiten
+                </li>
+                <li>
+                    Legen wert auf Harmonie
+                </li>
+                <li>
+                    Geistige Gesundheit ist ihnen wichtig
+                </li>
+                <li>
+                    Lieben Jüngerschaft
+                </li>
+                <li>
+                    Rüsten Andere gern für ihren
+                    Dienst zu
+                </li>
+                <li>
+                    Haben mit Christen Geduld, die
+                    nur langsam Reif werden
+                </li>
+                <li>
+                    Starker Gebetsheld, wacht im
+                </li>
+                <li>
+                    Gebet über den Glauben der
+                    Anderen
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_shepherd_keyword" translatable="false">
+        Unterweiser /Lehrer
+    </string>
+    <string name="result_shepherd_negative" translatable="false">
+         Nutzen das Vertrauen Anderer aus
+    </string>
+    <string name="result_shepherd_target" translatable="false">
+         Starke Leiterschaft statt Manipulation
+    </string>
+    <string name="result_shepherd_bible" translatable="false">
+         Eph. 4:11; I Pet. 5:2-4
+    </string>
+
+    <string name="result_teacher_header" translatable="false">
+        Lehrer
+    </string>
+    <string name="result_teacher_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Bevorzugen es zu erklären warum
+                    etwas wahr ist
+                </li>
+                <li>
+                    Stellen gern Nachforschungen an
+                </li>
+                <li>
+                    Untersuchen auch scheinbar
+                    unwichtige Details
+                </li>
+                <li>
+                    Präsentieren gerne
+                    ihre Erkenntnisse – auch im kleinen
+                    Rahmen
+                </li>
+                <li>
+                    Ignorieren die Bedürfnisse Anderer
+                </li>
+                <li>
+                    Suchen tieferes Verständnis
+                </li>
+                <li>
+                    Lieben es zu lernen
+                </li>
+                <li>
+                    Suchen geduldig und mit Ausdauer,
+                    sie könnten das Offensichtliche
+                    übersehen
+                </li>
+                <li>
+                    Können schwierige Bibelstellen gut
+                    und verständlich erklären
+                </li>
+                <li>
+                    Können sehen, wie sich
+                    verschiedene biblische Wahrheiten
+                    verbinden aber auch das Gesamtbild sehen
+                </li>
+                <li>
+                    Sprechen nicht so gerne vor großen
+                    Gruppen, bevorzugen Einzelgespräche
+                </li>
+                <li>
+                    Präsentieren die
+                    Wahrheit systematisch
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_teacher_keyword" translatable="false">
+        Tiefgang
+    </string>
+    <string name="result_teacher_negative" translatable="false">
+         geht zu tief
+    </string>
+    <string name="result_teacher_target" translatable="false">
+         Offenbare Wahrheit, nicht auslaugen
+    </string>
+    <string name="result_teacher_bible" translatable="false">
+         Röm. 12:6,7b; Col. 3:16; Jak. 3:1,2; 2 Tim. 2:2
+    </string>
+
+    <string name="result_wisdom_header" translatable="false">
+        Worte der Weisheit
+    </string>
+    <string name="result_wisdom_description" translatable="false">
+        <![CDATA[
+            <ul>
+                <li>
+                    Können Wissen praktisch anwenden
+                </li>
+                <li>
+                    Wollen Andere mit ihrem ernsthaften
+                    Wissen über Gott beeinflussen
+                </li>
+                <li>
+                    Können mit Stolz oder
+                    Überheblichkeit kämpfen
+                </li>
+                <li>
+                    Müssen sich in Demut üben und in
+                    Zurückhaltung bevor sie Anderen
+                    antworten
+                </li>
+                <li>
+                    Gute Seelsorger mit hervorragenden
+                    Ratschlägen
+                </li>
+                <li>
+                    Müssen ständig im Gebet Gott um
+                    seine Weisheit bitten
+                </li>
+                <li>
+                     Möchten lieber Gottes Wort
+                     anwenden als es nur zu verstehen
+                </li>
+                <li>
+                    Können mögliche Ergebnisse von
+                    negativen Ereignissen schnell
+                    erkennen
+                </li>
+                <li>
+                    Können Situationen aus
+                    verschiedenen Perspektiven
+                    betrachten und erkennen wie Gott
+                    leitet
+                </li>
+            </ul>
+        ]]>
+    </string>
+    <string name="result_wisdom_keyword" translatable="false">
+        Scharfsinnig
+    </string>
+    <string name="result_wisdom_negative" translatable="false">
+         Andere von Oben herab behandeln
+    </string>
+    <string name="result_wisdom_target" translatable="false">
+         Vertraue und bitte Gott ständig um Weisheit
+    </string>
+    <string name="result_wisdom_bible" translatable="false">
+         I Cor. 12:7-8; Jak. 3:13-18
+    </string>
+</resources>
