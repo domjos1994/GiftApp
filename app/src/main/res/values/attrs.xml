@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Question">
+        <attr name="text" format="string"/>
+        <attr name="choice" format="enum">
+            <enum name="unset" value="-1"/>
+            <enum name="never" value="0"/>
+            <enum name="much_rarely" value="1"/>
+            <enum name="rarely" value="2"/>
+            <enum name="sometimes" value="3"/>
+            <enum name="often" value="4"/>
+            <enum name="much_often" value="5"/>
+            <enum name="always" value="6"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="GiftItem">
+        <attr name="header" format="string"/>
+        <attr name="description" format="string"/>
+        <attr name="keyword" format="string"/>
+        <attr name="target" format="string"/>
+        <attr name="negative" format="string"/>
+    </declare-styleable>
+</resources>

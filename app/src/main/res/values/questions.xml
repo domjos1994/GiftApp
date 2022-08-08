@@ -22,27 +22,252 @@
         Ich habe ein starkes Bedürfnis, Anderen praktisch zu helfen.
     </string>
     <string name="question_page1_8" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Es macht mir Spaß Probleme aus biblischer Sicht anzugehen und zu untersuchen.
     </string>
     <string name="question_page1_9" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Ich übernehme gern die Leitung in einer Gruppe, wenn keine Leitung vorhanden ist.
     </string>
     <string name="question_page1_10" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Wenn Andere in Schwierigkeiten stecken, verbalisieren sie ihre Dankbarkeit, wenn ich für sie da bin.
     </string>
     <string name="question_page1_11" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Gott gebraucht mich andere zu ermutigen und aufzubauen, indem ich mit ihnen über geistige Sachen spreche.
     </string>
     <string name="question_page1_12" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Mir ist es egal ob eine Aufgabe noch so klein und unwichtig erscheint – ich tue was getan werden muss.
     </string>
     <string name="question_page1_13" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Ich möchte das die geistigen Bedürfnisse Anderer gedeckt werden und bin bereit selbst in sie zu investieren und in Jüngerschaft zu nehmen.
     </string>
     <string name="question_page1_14" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Es macht mir Spaß tieferes Verständnis für die Bibel zu erlangen und dies mit Anderen zu teilen.
     </string>
     <string name="question_page1_15" translatable="false">
-        Ich arbeite sehr gut unter druck und kann so am besten Entscheidungen treffen.
+        Ich möchte lieber Gottes Wort anwenden, als es nur zu verstehen.
+    </string>
+    <string name="question_page2_1" translatable="false">
+        Andere bitten mich oft etwas zu organisieren oder zu managen.
+    </string>
+    <string name="question_page2_2" translatable="false">
+        Ich scheine Andere und ihre Motive zu verstehen und zu erkennen, auch wenn ich die Person nicht gut kenne.
+    </string>
+    <string name="question_page2_3" translatable="false">
+        Ich kann mit den Problemen und den Nöten Anderer Mitfühlen und mich hinein versetzen ohne das es mich persönlich belastet.
+    </string>
+    <string name="question_page2_4" translatable="false">
+        Ich habe Andere schon zum Glauben an Christus geführt.
+    </string>
+    <string name="question_page2_5" translatable="false">
+        In bestimmten Fällen habe ich die Gewissheit von Gott bekommen, das er auch das Unmögliche tun wird.
+    </string>
+    <string name="question_page2_6" translatable="false">
+        Ich gebe gerne und voller Freude in´s Reich Gottes, ohne Bestimmte Nöten begegnen zu müssen
+    </string>
+    <string name="question_page2_7" translatable="false">
+        Ich helfe gerne Anderen auch wenn sie es nicht immer zu schätzen wissen oder es ausnutzen.
+    </string>
+    <string name="question_page2_8" translatable="false">
+        Ich bin bereit, willig und in der Lage meinen Standpunkt über religiöse Punkte zu vertreten.
+    </string>
+    <string name="question_page2_9" translatable="false">
+        Ich möchte Anderen in einem Dienst in der Gemeinde helfen, sie leiten und führen.
+    </string>
+    <string name="question_page2_10" translatable="false">
+        Ich wandle gerne meine Barmherzigkeit in einen Akt der Nächstenliebe um.
+    </string>
+    <string name="question_page2_11" translatable="false">
+        Andere Gläubige sind durch meine Gabe das Wort klar und einfach zu kommunizieren gesegnet.
+    </string>
+    <string name="question_page2_12" translatable="false">
+        Ich möchte Anderen den Rücken freihalten damit sie wichtigeren Aufgaben erledigen können
+    </string>
+    <string name="question_page2_13" translatable="false">
+        Ich möchte Andere gerne in Jüngerschaft nehmen und sie lehren.
+    </string>
+    <string name="question_page2_14" translatable="false">
+        Andere haben mir schon gesagt, dass ich eine Gabe darin habe schwierige Stellen in der Bibel gut erklären zu können.
+    </string>
+    <string name="question_page2_15" translatable="false">
+        Oft erweißen sich meine Ratschläge die ich in schwierigen Situationen Gebe als Richtig.
+    </string>
+    <string name="question_page3_1" translatable="false">
+        Wenn ich mir des Willen des Herrn sicher bin, bin ich bereit eine Entscheidung zu treffen, auch wenn Andere mich Missverstehen könnten.
+    </string>
+    <string name="question_page3_2" translatable="false">
+        Oft sind meine Einschätzungen Menschen oder Dingen gegenüber richtig, auch wenn Andere es nicht gleich sehen
+    </string>
+    <string name="question_page3_3" translatable="false">
+        Wenn Andere mir ihre Probleme mitteilen, kann ich ihnen aufgrund der Bibel helfen, und sie dazu bringen danach zu handeln
+    </string>
+    <string name="question_page3_4" translatable="false">
+        Es fällt mir leicht mit Ungläubigen über Gott zu sprechen und wie sehr sie ihn eigentlich brauchen.
+    </string>
+    <string name="question_page3_5" translatable="false">
+        Es fällt mir leicht zu glauben, das Gott in bestimmten Situationen handeln wird, auch wenn es nicht danach aussieht.
+    </string>
+    <string name="question_page3_6" translatable="false">
+        Ich bin bereit meinen Lebensstandard zurück zustecken um in Gottes Reich finanziell zu investieren.
+    </string>
+    <string name="question_page3_7" translatable="false">
+        Es macht mir Spaß im Hintergrund zu arbeiten und Anderen damit zu dienen.
+    </string>
+    <string name="question_page3_8" translatable="false">
+        Wenn ich Gottes Wort studiere fällt es mir leicht neue Offenbarungen zu erhalten.
+    </string>
+    <string name="question_page3_9" translatable="false">
+        Ich setze mir und meinem Dienst ständig Ziele, die ich versuche zu erreichen.
+    </string>
+    <string name="question_page3_10" translatable="false">
+        Wenn ich Not sehe, möchte ich Gottes Liebe den Verletzten weitergeben.
+    </string>
+    <string name="question_page3_11" translatable="false">
+        Ich habe die Fähigkeit Anderen mehr durch das Wort Gottes zu dienen als durch meine persönlichen Erfahrungen.
+    </string>
+    <string name="question_page3_12" translatable="false">
+        Es fällt mir schwer „nein“ zu sagen wenn jemand in der Kirche um Hilfe bittet.
+    </string>
+    <string name="question_page3_13" translatable="false">
+        Ich habe Geduld und möchte anderen Christen die nicht so schnell im Glauben Reifen helfen.
+    </string>
+    <string name="question_page3_14" translatable="false">
+        Ich überlege mir ständig wie biblische Konzepte auf eine einfach und verständnisvolle Weiße präsentiert werden kann.
+    </string>
+    <string name="question_page3_15" translatable="false">
+        Ich kann mögliche Folgen von negativen Situation schnell erkennen.
+    </string>
+    <string name="question_page4_1" translatable="false">
+        Ich kann eine Versammlung in Entscheidungen leiten.
+    </string>
+    <string name="question_page4_2" translatable="false">
+        Ich erkenne wenn eine Lehre mit dem Wort Gottes komfor ist.
+    </string>
+    <string name="question_page4_3" translatable="false">
+        Ich spreche gern mit Anderen über ihre geistige Entwicklung.
+    </string>
+    <string name="question_page4_4" translatable="false">
+        Ich habe kein Problem Nichtchristen zu fragen ob sie ihr Leben Jesus übergeben möchten, nachdem ich Zeugnis gegeben habe.
+    </string>
+    <string name="question_page4_5" translatable="false">
+        Ich kann Gottes Verheißungen persönlich annehmen und in gegebenen Situationen akzeptieren ohne zu zweifeln.
+    </string>
+    <string name="question_page4_6" translatable="false">
+        Alles was ich besitze, gehört eigentlich Gott und ich möchte nur ein guter Verwalter sein.
+    </string>
+    <string name="question_page4_7" translatable="false">
+        Ich helfe Anderen gerne körperlich oder finanziell um ihre Last damit etwas zu erleichtern.
+    </string>
+    <string name="question_page4_8" translatable="false">
+        Wenn ich mit Anderen das Wort studiere, erkenne ich oft schneller wie sie was die Passage eigentlich bedeutet.
+    </string>
+    <string name="question_page4_9" translatable="false">
+        Ich möchte Anderen helfen hohe geistige Ziele zu erreichen.
+    </string>
+    <string name="question_page4_10" translatable="false">
+        Ich möchte Anderen helfen, die emotional, körperlich oder mental leiden.
+    </string>
+    <string name="question_page4_11" translatable="false">
+        Ich werde die Wahrheit nicht Kompromittieren auch wenn mich Andere als engstirnig sehen.
+    </string>
+    <string name="question_page4_12" translatable="false">
+        Ich erledige auch gern Arbeiten die nicht besonders Wichtig erscheinen und vermeidlich klein sind.
+    </string>
+    <string name="question_page4_13" translatable="false">
+        Ich fühle mich verantwortlich andere Christen zu beschützen wenn ihr Glaube sonst untergraben werden würde.
+    </string>
+    <string name="question_page4_14" translatable="false">
+        Ich kann erkennen wie sich verschiedene biblische Wahrheiten ergänzen um ein Ganzes zu formen.
+    </string>
+    <string name="question_page4_15" translatable="false">
+        Es fällt mir leicht die Fragen und Probleme Anderer anhand der Bibel zu beantworten und zu erklären.
+    </string>
+    <string name="question_page5_1" translatable="false">
+        Ich erkenne leicht die Fehler und Schwächen in einer Planung.
+    </string>
+    <string name="question_page5_2" translatable="false">
+        Ich habe die Gabe zu erkennen welche Lehren vom Heiligen Geist sind, welche menschlich oder vom Feind.
+    </string>
+    <string name="question_page5_3" translatable="false">
+        Ich kann das Potential in Anderen erkennen und helfe ihnen geistig zu wachsen.
+    </string>
+    <string name="question_page5_4" translatable="false">
+        Ich mische mich gerne unter Nichtchristen, um sie für Christus zu gewinnen.
+    </string>
+    <string name="question_page5_5" translatable="false">
+        Wenn ich einem Hindernis gegenüber stehe, sehe ich es aus den Möglichkeiten Gottes statt aus meinen Möglichkeiten.
+    </string>
+    <string name="question_page5_6" translatable="false">
+        Ich investiere lieber finanziell in ein Projekt statt selber aktiv zu werden.
+    </string>
+    <string name="question_page5_7" translatable="false">
+        Ich habe starkes Mitgefühl für die Bedürftigen.
+    </string>
+    <string name="question_page5_8" translatable="false">
+        Biblische Wahrheiten in meinem Leben anzuwenden hat hohe Priorität.
+    </string>
+    <string name="question_page5_9" translatable="false">
+        Ich kann Gottes Plan im Leben Anderer erkennen und möchte ihnen helfen diesen umzusetzen.
+    </string>
+    <string name="question_page5_10" translatable="false">
+        Meine starkes Mitgefühl den Bedürftigen gegenüber treibt mich zur Handlung.
+    </string>
+    <string name="question_page5_11" translatable="false">
+        Ich schrecke nicht davor zurück, Gottes Gericht zu predigen denen die falsches tun und Gottes Gnade denen die seinen Willen ausleben.
+    </string>
+    <string name="question_page5_12" translatable="false">
+        Ich sehe meinen Dienst mehr Andere zu unterstützten als selbst die Leitung zu übernehmen.
+    </string>
+    <string name="question_page5_13" translatable="false">
+        Es liegt mir sehr am Herzen das die Gemeinschaft der Christen in Eintracht leben.
+    </string>
+    <string name="question_page5_14" translatable="false">
+        Ich genieße es tiefgehende Bibelstudien und Nachforschungen zu machen und meine Gedanken dazu systematisch zu ordnen.
+    </string>
+    <string name="question_page5_15" translatable="false">
+        Ich kann Probleme aus verschiedenen Winkeln und Perspektiven betrachten und erkennen in welche Richtung Gott leiten möchte.
+    </string>
+    <string name="question_page6_1" translatable="false">
+        Ich organisiere gerne Ideen, Leute und Ressourcen um mehr Effektivität zu erlangen.
+    </string>
+    <string name="question_page6_2" translatable="false">
+        Andere Gläubige vertrauen meinem Urteil in fragwürdigen Situationen und nehmen meinen Ratschlag an.
+    </string>
+    <string name="question_page6_3" translatable="false">
+        Ich wäre dazu bereit, jede Woche eine gewisse Zeit im Dienst der Seelsorge zu verbringen.
+    </string>
+    <string name="question_page6_4" translatable="false">
+        Menschen haben sich schon aufgrund meines Zeugnisses bekehrt.
+    </string>
+    <string name="question_page6_5" translatable="false">
+        Es fällt mir leicht Gott auch in schwierigen oder tragischen Situationen ohne wenn und aber zu vertrauen.
+    </string>
+    <string name="question_page6_6" translatable="false">
+        Ich bin davon überzeugt, wenn ich für einen bestimmten Zweck gebe, bin ich die Antwort auf ein Gebet.
+    </string>
+    <string name="question_page6_7" translatable="false">
+        Ich suche nach Möglichkeiten Anderen zu helfen.
+    </string>
+    <string name="question_page6_8" translatable="false">
+        Ich kann zwischen relevanten Prinzipien und unwichtigen Beobachtungen in der Bibel unterscheiden.
+    </string>
+    <string name="question_page6_9" translatable="false">
+        Wenn ich die Möglichkeit hätte, würde ich gerne Andere anleiten, dirigieren oder motivieren.
+    </string>
+    <string name="question_page6_10" translatable="false">
+        Es wäre mir eine Freude in einem Dienst mitzuwirken die denen die physisch leiden dienen.
+    </string>
+    <string name="question_page6_11" translatable="false">
+        Wenn etwas Falsch ist, habe ich das Gefühl etwas sagen zu müssen und Korrektur zu bringen.
+    </string>
+    <string name="question_page6_12" translatable="false">
+        Andere haben mir schon gesagt, dass ich ihnen eine große Hilfe war, indem ich sie Unterstützt habe und sie somit in ihrem Dienst effektiver arbeiten konnten.
+    </string>
+    <string name="question_page6_13" translatable="false">
+        Ich genieße es andere Christen in Jüngerschaft zu nehmen.
+    </string>
+    <string name="question_page6_14" translatable="false">
+        Ich verteidige biblische Prinzipien auch wenn ich mit anderen Meinungen oder Spott rechnen muss.
+    </string>
+    <string name="question_page6_15" translatable="false">
+        Von Zeit zu Zeit gibt mir Gott übernatürliches Verständnis und Einsicht in Sachen die mein menschliches Verständnis überschreiten.
     </string>
 </resources>

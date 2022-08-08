@@ -3,4 +3,7 @@
 
     <dimen name="question_label_margin">4dp</dimen>
     <dimen name="question_label_size">16sp</dimen>
+    <dimen name="question_answer_padding">1dp</dimen>
+    <dimen name="question_answer_height">30dp</dimen>
+    <dimen name="question_answer_width">100dp</dimen>
 </resources>

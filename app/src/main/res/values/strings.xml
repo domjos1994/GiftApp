@@ -8,11 +8,27 @@
 
     // main
     <string name="main_start">Start test</string>
-    
-    <string name="question_never" translatable="false">nie</string>
-    <string name="question_much_rarely" translatable="false">sehr selten</string>
-    <string name="question_rarely" translatable="false">selten</string>
-    <string name="question_sometimes" translatable="false">manchmal</string>
-    <string name="question_often" translatable="false">oft</string>
-    <string name="question_much_often" translatable="false">sehr oft</string>
+
+    // test
+    <string name="test_report">Report</string>
+    <string name="test_page1">Page 1</string>
+    <string name="test_page2">Page 2</string>
+    <string name="test_page3">Page 3</string>
+    <string name="test_page4">Page 4</string>
+    <string name="test_page5">Page 5</string>
+    <string name="test_page6">Page 6</string>
+
+    // question
+    <string name="question_unset">unset</string>
+    <string name="question_never">never</string>
+    <string name="question_much_rarely">much rarely</string>
+    <string name="question_rarely">rarely</string>
+    <string name="question_sometimes">sometimes</string>
+    <string name="question_often">often</string>
+    <string name="question_much_often">much often</string>
+    <string name="question_always">always</string>
+    <string name="question_result_keyword">Keyword</string>
+    <string name="question_result_negative">Negative</string>
+    <string name="question_result_target">Target</string>
+    <string name="question_result_bible">Bible-Passage</string>
 </resources>

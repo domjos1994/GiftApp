@@ -17,12 +17,25 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="de.domjos.gift_app.fragments.SecondFragment"
+        android:name="de.domjos.gift_app.fragments.TestFragment"
         android:label="@string/test"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_test">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@+id/ThirdFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="de.domjos.gift_app.fragments.ResultFragment"
+        android:label="@string/test_report"
+        tools:layout="@layout/fragment_result">
+
+        <action
+            android:id="@+id/action_ThirdFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

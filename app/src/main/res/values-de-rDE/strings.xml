@@ -8,4 +8,27 @@
 
     // main
     <string name="main_start">Test starten</string>
+
+    // test
+    <string name="test_report">Auswerten</string>
+    <string name="test_page1">Seite 1</string>
+    <string name="test_page2">Seite 2</string>
+    <string name="test_page3">Seite 3</string>
+    <string name="test_page4">Seite 4</string>
+    <string name="test_page5">Seite 5</string>
+    <string name="test_page6">Seite 6</string>
+
+    // question
+    <string name="question_unset">nicht gesetzt</string>
+    <string name="question_never">nie</string>
+    <string name="question_much_rarely">sehr selten</string>
+    <string name="question_rarely">selten</string>
+    <string name="question_sometimes">manchmal</string>
+    <string name="question_often">oft</string>
+    <string name="question_much_often">sehr oft</string>
+    <string name="question_always">immer</string>
+    <string name="question_result_keyword">Schküsselwort</string>
+    <string name="question_result_negative">Negativ</string>
+    <string name="question_result_target">Ziel</string>
+    <string name="question_result_bible">Bibel-Stelle</string>
 </resources>

@@ -4,6 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.12226707029936092" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/drawable/gift_item_header.xml" value="0.1675" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/drawable/question_area_background.xml" value="0.256" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/drawable/question_area_selected.xml" value="0.256" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_result.xml" value="0.428125" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_second.xml" value="0.17046605876393112" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page1.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page2.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page3.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page4.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page5.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/fragment_test_page6.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/gift_item.xml" value="0.35128205128205126" />
+        <entry key="..\:/Users/hae/Documents/Entwicklung/Java/Android/GiftApp/app/src/main/res/layout/question.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17046605876393112" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.17046605876393112" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.17046605876393112" />
@@ -22,7 +36,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.17046605876393112" />
+        <option name="scale" value="0.23020833333333332" />
       </ProjectState>
     </option>
   </component>
