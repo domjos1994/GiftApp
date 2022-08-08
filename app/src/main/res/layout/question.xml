@@ -10,17 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/question_page1_2"
+        android:layout_margin="@dimen/question_label_margin"
+        android:textSize="@dimen/question_label_size"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/acs"/>
+        app:layout_constraintBottom_toTopOf="@+id/choice"/>
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/acs"
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/choice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/lblQuestion"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+    </androidx.constraintlayout.helper.widget.Flow>
 </androidx.constraintlayout.widget.ConstraintLayout>

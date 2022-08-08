@@ -2,4 +2,5 @@
     <dimen name="button_margin">3dp</dimen>
 
     <dimen name="question_label_margin">4dp</dimen>
+    <dimen name="question_label_size">16sp</dimen>
 </resources>

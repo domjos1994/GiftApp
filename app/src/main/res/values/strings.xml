@@ -8,4 +8,11 @@
 
     // main
     <string name="main_start">Start test</string>
+    
+    <string name="question_never" translatable="false">nie</string>
+    <string name="question_much_rarely" translatable="false">sehr selten</string>
+    <string name="question_rarely" translatable="false">selten</string>
+    <string name="question_sometimes" translatable="false">manchmal</string>
+    <string name="question_often" translatable="false">oft</string>
+    <string name="question_much_often" translatable="false">sehr oft</string>
 </resources>
