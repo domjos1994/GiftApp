@@ -1,4 +1,4 @@
-package de.domjos.gift_app
+package de.domjos.gift_app.services
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE

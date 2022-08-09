@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="de.domjos.gift_app.fragments.FirstFragment"
+        android:name="de.domjos.gift_app.fragments.MainFragment"
         android:label="@string/main"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_main">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"

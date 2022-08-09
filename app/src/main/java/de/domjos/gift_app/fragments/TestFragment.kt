@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import de.domjos.gift_app.R
 import de.domjos.gift_app.adapters.TestAdapter
+import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.databinding.FragmentTestBinding
 import java.util.*
 
@@ -25,14 +24,9 @@ class TestFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentTestBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,7 +35,28 @@ class TestFragment : Fragment() {
         val tbl: TabLayout? = _binding?.tblQuestions
 
         val viewPager = _binding?.viewPager
-        val testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it) }
+
+        var testAdapter: TestAdapter? = null
+
+       testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, object: Question.OnChange {
+           override fun change() {
+                if(testAdapter != null) {
+                    var hasQuestions = false
+                    for(i in 0 until tbl?.tabCount!!) {
+                        val count = testAdapter?.getUnsetCount(i)!!
+                        if(count != 0) {
+                            val badge = tbl.getTabAt(i)?.orCreateBadge
+                            badge?.number = count
+                            hasQuestions = true
+                        } else {
+                            tbl.getTabAt(i)?.removeBadge()
+                        }
+                    }
+
+                    binding.cmdReport.isEnabled = !hasQuestions
+                }
+           }
+       })}!!
         viewPager?.adapter = context?.let { testAdapter }
         viewPager?.offscreenPageLimit = 6
         tbl?.setupWithViewPager(viewPager)
@@ -65,14 +80,14 @@ class TestFragment : Fragment() {
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 val badge = tab?.orCreateBadge
-                badge?.number = tab?.position?.let { testAdapter?.getUnsetCount(it) }!!
+                badge?.number = tab?.position?.let { testAdapter.getUnsetCount(it) }!!
             }
         })
 
         _binding?.cmdReport?.setOnClickListener {
-            val list: LinkedList<Int>? = testAdapter?.getResults()
+            val list: LinkedList<Int> = testAdapter.getResults()
             val args = Bundle()
-            for(i in 0 until list!!.size) {
+            for(i in 0 until list.size) {
                 args.putInt(i.toString(), list[i])
             }
             controller.navigate(R.id.action_SecondFragment_to_ThirdFragment, args)

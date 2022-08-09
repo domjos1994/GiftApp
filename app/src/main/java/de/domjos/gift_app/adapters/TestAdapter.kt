@@ -5,19 +5,21 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import de.domjos.gift_app.R
+import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.fragments.*
+import de.domjos.gift_app.fragments.testPageImpl.*
 import java.util.*
 
-class TestAdapter(fm: FragmentManager, private var context: Context) : FragmentPagerAdapter(fm) {
+class TestAdapter(fm: FragmentManager, private var context: Context, change: Question.OnChange) : FragmentPagerAdapter(fm) {
     private var fragments: LinkedList<TestPageFragment> = LinkedList<TestPageFragment>()
 
     init {
-        fragments.add(TestPage1Fragment())
-        fragments.add(TestPage2Fragment())
-        fragments.add(TestPage3Fragment())
-        fragments.add(TestPage4Fragment())
-        fragments.add(TestPage5Fragment())
-        fragments.add(TestPage6Fragment())
+        fragments.add(TestPage1Fragment(change))
+        fragments.add(TestPage2Fragment(change))
+        fragments.add(TestPage3Fragment(change))
+        fragments.add(TestPage4Fragment(change))
+        fragments.add(TestPage5Fragment(change))
+        fragments.add(TestPage6Fragment(change))
     }
 
     override fun getCount(): Int {

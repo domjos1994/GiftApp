@@ -20,6 +20,7 @@ class Question : ConstraintLayout {
     private lateinit var lblOften: TextView
     private lateinit var lblMuchOften: TextView
     private lateinit var lblAlways: TextView
+    private var change: OnChange? = null
     private var choice: Int = -1
     private var text: String = ""
 
@@ -40,6 +41,14 @@ class Question : ConstraintLayout {
     ):   super(context, attrs, defStyleAttr) {
         initView()
         getAttributes(attrs, context)
+    }
+
+    fun setChange(change: OnChange) {
+        this.change = change
+    }
+
+    interface OnChange {
+        fun change()
     }
 
     @SuppressLint("Recycle")
@@ -112,6 +121,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = -1
+            change?.change()
         }
 
         lblNever.setOnClickListener {
@@ -124,6 +134,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = 0
+            change?.change()
         }
 
         lblMuchRarely.setOnClickListener {
@@ -136,6 +147,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = 1
+            change?.change()
         }
 
         lblRarely.setOnClickListener {
@@ -148,6 +160,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = 2
+            change?.change()
         }
 
         lblSometimes.setOnClickListener {
@@ -160,6 +173,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = 3
+            change?.change()
         }
 
         lblOften.setOnClickListener {
@@ -172,6 +186,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, false)
             choice = 4
+            change?.change()
         }
 
         lblMuchOften.setOnClickListener {
@@ -184,6 +199,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, true)
             setView(lblAlways, false)
             choice = 5
+            change?.change()
         }
 
         lblAlways.setOnClickListener {
@@ -196,6 +212,7 @@ class Question : ConstraintLayout {
             setView(lblMuchOften, false)
             setView(lblAlways, true)
             choice = 6
+            change?.change()
         }
     }
 
@@ -204,16 +221,16 @@ class Question : ConstraintLayout {
         if(state) {
             lbl.setBackgroundResource(R.drawable.question_area_selected)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                lbl.setTextColor(resources.getColor(R.color.white, resources.newTheme()))
+                lbl.setTextColor(resources.getColor(R.color.color_secondary_variant, resources.newTheme()))
             } else {
-                lbl.setTextColor(resources.getColor(R.color.white))
+                lbl.setTextColor(resources.getColor(R.color.color_secondary_variant))
             }
         } else {
             lbl.background = null
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                lbl.setTextColor(resources.getColor(R.color.black, resources.newTheme()))
+                lbl.setTextColor(resources.getColor(android.R.color.black, resources.newTheme()))
             } else {
-                lbl.setTextColor(resources.getColor(R.color.black))
+                lbl.setTextColor(resources.getColor(android.R.color.black))
             }
         }
     }
