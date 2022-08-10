@@ -2,7 +2,6 @@ package de.domjos.gift_app.services
 
 import android.os.Handler
 import android.os.Looper
-import java.util.concurrent.Callable
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
@@ -11,12 +10,12 @@ class TaskRunner {
     private val handler: Handler = Handler(Looper.getMainLooper())
 
     interface Callback<R> {
-        fun onComplete(result: R)
+        fun onComplete(result: DailyVerse.JsonVerse?)
     }
 
-    fun <R> executeAsync(callable: Callable<R>, callBack: Callback<R?>) {
+    fun <R> executeAsync(callable: DailyVerse?, callBack: Callback<R?>) {
         executor.execute {
-            val result: R = callable.call()
+            val result: DailyVerse.JsonVerse? = callable?.call()
             handler.post { callBack.onComplete(result) }
         }
     }

@@ -1,43 +1,57 @@
 package de.domjos.gift_app.services
 
-import com.google.gson.Gson
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import android.content.Context
+import de.domjos.gift_app.R
+import org.w3c.dom.Document
+import org.w3c.dom.Element
+import org.w3c.dom.Node
+import org.w3c.dom.NodeList
+import org.xml.sax.InputSource
+import java.net.URL
 import java.util.concurrent.Callable
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
 
-class DailyVerse : Callable<DailyVerse.JsonVerse> {
+class DailyVerse(val context: Context) : Callable<DailyVerse.JsonVerse> {
 
     override fun call(): JsonVerse? {
         try {
-            val client = OkHttpClient()
-            val request = Request.Builder()
-                .url("https://beta.ourmanna.com/api/v1/get?format=json&order=daily")
-                .get()
-                .addHeader("Accept", "application/json")
-                .build()
+            val url: String = this.context.getString(R.string.main_daily_url)
+            val factory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
+            val documentBuilder: DocumentBuilder = factory.newDocumentBuilder()
+            val document: Document = documentBuilder.parse(InputSource(URL(url).openStream()))
 
-            val response = client.newCall(request).execute()
-            val content = response.body!!.string()
+            val nodeList: NodeList = document.getElementsByTagName("item")
+            if(nodeList.length != 0) {
+                val element: Element = nodeList.item(0) as Element
 
-            val gson = Gson()
-            return gson.fromJson(content, JsonVerse().javaClass);
+                val dailyVerse = JsonVerse()
+                dailyVerse.notice = getChild("dc:rights", element)
+                dailyVerse.text = getChild("content:encoded", element)
+                dailyVerse.reference = getChild("title", element)
+
+                return dailyVerse
+            }
+
+            return null
         } catch (ex: Exception) {
             return null
         }
     }
 
-    class JsonVerse {
-        var verse: Verse? = null
-
-        class Verse {
-            var notice: String = ""
-            var details: Details? = null
-
-            class Details {
-                var text: String = ""
-                var reference: String = ""
-                var version: String = ""
+    private fun getChild(item: String, document: Element): String {
+        try {
+            val nodeList: NodeList = document.getElementsByTagName(item)
+            for (i in 0 until nodeList.length) {
+                return nodeList.item(i).textContent
             }
-        }
+        } catch (ex: Exception) {}
+        return ""
+    }
+
+    class JsonVerse {
+        var notice: String = ""
+        var text: String = ""
+        var reference: String = ""
     }
 }

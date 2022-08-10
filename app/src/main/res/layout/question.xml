@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:alignContent="stretch"
         app:alignItems="stretch"
-        app:flexWrap="wrap">
+        app:flexWrap="wrap"
+        app:justifyContent="center">
         <TextView
             android:id="@+id/lblUnset"
             android:layout_width="@dimen/question_answer_width"

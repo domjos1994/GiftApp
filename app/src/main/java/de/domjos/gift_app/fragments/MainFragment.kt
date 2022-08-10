@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import de.domjos.gift_app.Helper
 import de.domjos.gift_app.services.DailyVerse
 import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.FragmentMainBinding
@@ -36,16 +37,16 @@ class MainFragment : Fragment() {
             val impl = object : Callback<DailyVerse.JsonVerse?> {
                 override fun onComplete(result: DailyVerse.JsonVerse?) {
                     if(result != null) {
-                        binding.lblDailyVerseHeader.text = result.verse?.details?.reference
-                        binding.lblDailyVerseContent.text = result.verse?.details?.text
-                        binding.lblDailyVerseNotice.text = result.verse?.notice
+                        binding.lblDailyVerseHeader.text = result.reference
+                        binding.lblDailyVerseContent.text = Helper.showHtml(result.text)
+                        binding.lblDailyVerseNotice.text = ""
                     } else {
                         binding.lblDailyVerseHeader.text = getString(R.string.main_header)
                         binding.lblDailyVerseContent.text = getString(R.string.main_content)
                     }
                 }
             }
-            taskRunner.executeAsync(DailyVerse(), impl)
+            taskRunner.executeAsync(this.context?.let { DailyVerse(it) }, impl)
         } catch (ex: Exception) {
             binding.lblDailyVerseHeader.text = ex.message
             binding.lblDailyVerseContent.text = ex.toString()

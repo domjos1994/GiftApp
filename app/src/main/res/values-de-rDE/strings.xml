@@ -10,6 +10,7 @@
     <string name="main_start">Test starten</string>
     <string name="main_header">Gaben-Test</string>
     <string name="main_content">Starten Sie den Gaben-Test hier!</string>
+    <string name="main_daily_url">https://www.biblegateway.com/usage/votd/rss/votd.rdf?10</string>
 
     // test
     <string name="test_report">Auswerten</string>
@@ -29,7 +30,7 @@
     <string name="question_often">oft</string>
     <string name="question_much_often">sehr oft</string>
     <string name="question_always">immer</string>
-    <string name="question_result_keyword">Schküsselwort</string>
+    <string name="question_result_keyword">Schlüsselwort</string>
     <string name="question_result_negative">Negativ</string>
     <string name="question_result_target">Ziel</string>
     <string name="question_result_bible">Bibel-Stelle</string>
