@@ -47,6 +47,10 @@ class Question : ConstraintLayout {
         this.change = change
     }
 
+    fun getChange(): OnChange? {
+        return this.change
+    }
+
     interface OnChange {
         fun change()
     }

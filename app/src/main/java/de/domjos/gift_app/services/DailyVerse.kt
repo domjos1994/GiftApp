@@ -7,19 +7,23 @@ import java.util.concurrent.Callable
 
 class DailyVerse : Callable<DailyVerse.JsonVerse> {
 
-    override fun call(): JsonVerse {
-        val client = OkHttpClient()
-        val request = Request.Builder()
-            .url("https://beta.ourmanna.com/api/v1/get?format=json&order=daily")
-            .get()
-            .addHeader("Accept", "application/json")
-            .build()
+    override fun call(): JsonVerse? {
+        try {
+            val client = OkHttpClient()
+            val request = Request.Builder()
+                .url("https://beta.ourmanna.com/api/v1/get?format=json&order=daily")
+                .get()
+                .addHeader("Accept", "application/json")
+                .build()
 
-        val response = client.newCall(request).execute()
-        val content = response.body!!.string()
+            val response = client.newCall(request).execute()
+            val content = response.body!!.string()
 
-        val gson = Gson()
-        return gson.fromJson(content, JsonVerse().javaClass);
+            val gson = Gson()
+            return gson.fromJson(content, JsonVerse().javaClass);
+        } catch (ex: Exception) {
+            return null
+        }
     }
 
     class JsonVerse {

@@ -14,12 +14,23 @@ class TestAdapter(fm: FragmentManager, private var context: Context, change: Que
     private var fragments: LinkedList<TestPageFragment> = LinkedList<TestPageFragment>()
 
     init {
-        fragments.add(TestPage1Fragment(change))
-        fragments.add(TestPage2Fragment(change))
-        fragments.add(TestPage3Fragment(change))
-        fragments.add(TestPage4Fragment(change))
-        fragments.add(TestPage5Fragment(change))
-        fragments.add(TestPage6Fragment(change))
+        fragments.add(TestPage1Fragment())
+        fragments.add(TestPage2Fragment())
+        fragments.add(TestPage3Fragment())
+        fragments.add(TestPage4Fragment())
+        fragments.add(TestPage5Fragment())
+        fragments.add(TestPage6Fragment())
+
+        for(i in 0..5) {
+            fragments[i].setChange(change)
+        }
+    }
+
+    fun setChange(change: Question.OnChange) {
+        for(i in 0..5) {
+            fragments[i].setChange(change)
+        }
+        change.change()
     }
 
     override fun getCount(): Int {

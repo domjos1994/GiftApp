@@ -4,10 +4,12 @@
 
     // screens
     <string name="test">Gaben-Test</string>
-    <string name="settings">Einstellungen</string>
+    <string name="impress">Impressum</string>
 
     // main
     <string name="main_start">Test starten</string>
+    <string name="main_header">Gaben-Test</string>
+    <string name="main_content">Starten Sie den Gaben-Test hier!</string>
 
     // test
     <string name="test_report">Auswerten</string>
@@ -31,4 +33,14 @@
     <string name="question_result_negative">Negativ</string>
     <string name="question_result_target">Ziel</string>
     <string name="question_result_bible">Bibel-Stelle</string>
+
+    // impress
+    <string name="impress_content">
+        <![CDATA[
+            <p>
+                Die App wurde entwickelt von <a href="https://domjos.de">Domjos</a>.
+                Der Bibel-Vers kommt von <a href="https://beta.ourmanna.com">OurManna</a>.
+            </p>
+        ]]>
+    </string>
 </resources>

@@ -8,7 +8,7 @@ import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.databinding.FragmentTestPage6Binding
 import de.domjos.gift_app.fragments.TestPageFragment
 
-class TestPage6Fragment(change: Question.OnChange) : TestPageFragment("page6", change) {
+class TestPage6Fragment : TestPageFragment("page6") {
     private var _binding: FragmentTestPage6Binding? = null
 
     // This property is only valid between onCreateView and

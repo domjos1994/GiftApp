@@ -1,10 +1,14 @@
 package de.domjos.gift_app.fragments
 
+import android.app.Activity
+import android.app.Application
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat.recreate
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import de.domjos.gift_app.R
@@ -17,7 +21,7 @@ import java.util.*
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class TestFragment : Fragment() {
-
+    private lateinit var change: Question.OnChange
     private var _binding: FragmentTestBinding? = null
 
     // This property is only valid between onCreateView and
@@ -38,8 +42,8 @@ class TestFragment : Fragment() {
 
         var testAdapter: TestAdapter? = null
 
-       testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, object: Question.OnChange {
-           override fun change() {
+        this.change = object: Question.OnChange {
+            override fun change() {
                 if(testAdapter != null) {
                     var hasQuestions = false
                     for(i in 0 until tbl?.tabCount!!) {
@@ -55,8 +59,10 @@ class TestFragment : Fragment() {
 
                     binding.cmdReport.isEnabled = !hasQuestions
                 }
-           }
-       })}!!
+            }
+        }
+
+       testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, this.change)}!!
         viewPager?.adapter = context?.let { testAdapter }
         viewPager?.offscreenPageLimit = 6
         tbl?.setupWithViewPager(viewPager)
@@ -79,8 +85,13 @@ class TestFragment : Fragment() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                val badge = tab?.orCreateBadge
-                badge?.number = tab?.position?.let { testAdapter.getUnsetCount(it) }!!
+                val count = tab?.position?.let { testAdapter.getUnsetCount(it) }!!
+                if(count != 0) {
+                    val badge = tbl.getTabAt(tab.position)?.orCreateBadge
+                    badge?.number = count
+                } else {
+                    tbl.getTabAt(tab.position)?.removeBadge()
+                }
             }
         })
 
@@ -98,5 +109,10 @@ class TestFragment : Fragment() {
         super.onDestroyView()
         (_binding?.viewPager?.adapter as TestAdapter).save()
         _binding = null
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        (this.binding.viewPager.adapter as TestAdapter).setChange(this.change)
     }
 }

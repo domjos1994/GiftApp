@@ -11,8 +11,9 @@ import de.domjos.gift_app.services.Settings
 import de.domjos.gift_app.customControls.Question
 import java.util.*
 
-open class TestPageFragment(private val page: String, private val change: Question.OnChange) : Fragment() {
+open class TestPageFragment(private val page: String) : Fragment() {
     protected var cl: ConstraintLayout? = null
+    private var change: Question.OnChange? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,15 +22,18 @@ open class TestPageFragment(private val page: String, private val change: Questi
         var i = 0
         this.cl?.forEach {
             val item: Question = it as Question
-            item.setChange(change)
             item.setChoice(settings.getSetting("$page$i", -1))
-
+            if(this.change != null) {
+                item.setChange(this.change!!)
+            }
             i++
         }
-        change.change()
+        this.change?.change()
     }
 
-
+    fun setChange(change: Question.OnChange) {
+        this.change = change
+    }
 
     fun countUnsetQuestions(): Int {
         var counter = 0

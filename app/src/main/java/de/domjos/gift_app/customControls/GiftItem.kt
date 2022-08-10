@@ -10,6 +10,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import de.domjos.gift_app.Helper
 import de.domjos.gift_app.R
 import java.lang.Exception
 
@@ -44,17 +45,8 @@ class GiftItem : ConstraintLayout {
                 lblHeader.text = a.getString(R.styleable.GiftItem_header)
             }
             if (a.hasValue(R.styleable.GiftItem_description)) {
-                val content: Spanned? =
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Html.fromHtml(
-                            a.getString(R.styleable.GiftItem_description),
-                            Html.FROM_HTML_MODE_COMPACT
-                        )
-                    } else {
-                        Html.fromHtml(
-                            a.getString(R.styleable.GiftItem_description)
-                        )
-                    }
+                val content: Spanned? = a.getString(R.styleable.GiftItem_description)
+                    ?.let { Helper.showHtml(it) }
                 lblDescription.text = content
             }
             if (a.hasValue(R.styleable.GiftItem_keyword)) {
