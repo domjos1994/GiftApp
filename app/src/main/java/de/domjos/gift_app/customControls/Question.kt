@@ -115,6 +115,16 @@ class Question : ConstraintLayout {
         lblMuchOften = rootView.findViewById(R.id.lblMuchOften)
         lblAlways = rootView.findViewById(R.id.lblAlways)
 
+        lblQuestion.contentDescription = this.id.toString() + " " + lblQuestion.text
+        lblUnset.contentDescription = this.id.toString() + " " + lblUnset.text
+        lblNever.contentDescription = this.id.toString() + " " + lblNever.text
+        lblMuchRarely.contentDescription = this.id.toString() + " " + lblMuchRarely.text
+        lblRarely.contentDescription = this.id.toString() + " " + lblRarely.text
+        lblSometimes.contentDescription = this.id.toString() + " " + lblSometimes.text
+        lblOften.contentDescription = this.id.toString() + " " + lblOften.text
+        lblMuchOften.contentDescription = this.id.toString() + " " + lblMuchOften.text
+        lblAlways.contentDescription = this.id.toString() + " " + lblAlways.text
+
         lblUnset.setOnClickListener {
             setView(lblUnset, true)
             setView(lblNever, false)

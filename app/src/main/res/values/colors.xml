@@ -10,7 +10,7 @@
 
     <color name="color_primary_dark">#005178</color>
     <color name="color_primary_variant_dark">#0085a3</color>
-    <color name="color_primary_on_dark">#ff7000</color>
+    <color name="color_primary_on_dark">#fff000</color>
 
     <color name="color_secondary_dark">#370099</color>
     <color name="color_secondary_variant_dark">#250da6</color>

@@ -33,8 +33,9 @@
         app:justifyContent="center">
         <TextView
             android:id="@+id/lblUnset"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_unset"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"
@@ -42,50 +43,57 @@
             android:textColor="@color/color_secondary_variant"/>
         <TextView
             android:id="@+id/lblNever"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_never"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblMuchRarely"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_much_rarely"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblRarely"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_rarely"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblSometimes"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_sometimes"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblOften"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_often"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblMuchOften"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_much_often"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
         <TextView
             android:id="@+id/lblAlways"
-            android:layout_width="@dimen/question_answer_width"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/question_answer_height"
+            android:minWidth="@dimen/question_answer_width"
             android:text="@string/question_always"
             android:gravity="center"
             android:padding="@dimen/question_answer_padding"/>
