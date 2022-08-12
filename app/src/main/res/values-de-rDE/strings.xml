@@ -5,6 +5,8 @@
     // screens
     <string name="test">Gaben-Test</string>
     <string name="impress">Impressum</string>
+    <string name="reset">Daten zurücksetzen</string>
+    <string name="reset_msg">Zurücksetzen war erfolgreich!</string>
 
     // main
     <string name="main_start">Test starten</string>

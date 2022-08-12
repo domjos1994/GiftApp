@@ -5,6 +5,8 @@
     <string name="main" translatable="false">@string/app_name</string>
     <string name="test">Gift-Test</string>
     <string name="impress">Impress</string>
+    <string name="reset">Reset Data</string>
+    <string name="reset_msg">Reset was successfully!</string>
 
     // main
     <string name="main_start">Start test</string>

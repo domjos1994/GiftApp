@@ -4,20 +4,40 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
-class Settings {
+@Suppress("UNCHECKED_CAST")
+class Settings(context: Context) {
     private val pref: SharedPreferences
 
-    constructor(context: Context) {
+    init {
         pref = context.getSharedPreferences("GiftApp", MODE_PRIVATE)
     }
 
-    fun getSetting(item: String, def: Int) : Int {
-        return pref.getInt(item, def)
+    fun <T> getSetting(item: String, def: T) : T {
+        return when(def) {
+            is Int -> (pref.getInt(item, def) as T)
+            is String -> (pref.getString(item, def) as T)
+            is Boolean -> (pref.getBoolean(item, def) as T)
+            is Long -> (pref.getLong(item, def) as T)
+            is Float -> (pref.getFloat(item, def) as T)
+            else -> def
+        }
     }
 
-    fun saveSetting(item: String, value: Int) {
+    fun <T> saveSetting(item: String, value: T) {
         val editor = pref.edit()
-        editor.putInt(item.toString(), value)
+        when(value) {
+            is Int -> editor.putInt(item, value)
+            is String -> editor.putString(item, value)
+            is Boolean -> editor.putBoolean(item, value)
+            is Long -> editor.putLong(item, value)
+            is Float -> editor.putFloat(item, value)
+        }
+        editor.apply()
+    }
+
+    fun reset() {
+        val editor = pref.edit()
+        editor.clear()
         editor.apply()
     }
 }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="de.domjos.gift_app.activities.MainActivity">
     <item
+        android:id="@+id/action_reset"
+        android:orderInCategory="100"
+        android:title="@string/reset"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_impress"
         android:orderInCategory="100"
         android:title="@string/impress"

@@ -8,10 +8,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import de.domjos.gift_app.Helper
 import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.ActivityMainBinding
+import de.domjos.gift_app.services.Settings
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -43,6 +45,12 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_impress -> {
                 alert.create().show()
+                return true
+            }
+            R.id.action_reset -> {
+                Settings(this.applicationContext).reset()
+
+                Toast.makeText(this.applicationContext, R.string.reset_msg, Toast.LENGTH_LONG).show()
                 return true
             }
             else -> super.onOptionsItemSelected(item)
