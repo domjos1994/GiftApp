@@ -10,9 +10,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.children
 import de.domjos.gift_app.Helper
 import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.ActivityMainBinding
+import de.domjos.gift_app.fragments.TestFragment
 import de.domjos.gift_app.services.Settings
 
 class MainActivity : AppCompatActivity() {
@@ -51,6 +53,16 @@ class MainActivity : AppCompatActivity() {
                 Settings(this.applicationContext).reset()
 
                 Toast.makeText(this.applicationContext, R.string.reset_msg, Toast.LENGTH_LONG).show()
+
+                val fragmentManager = supportFragmentManager
+                val hostFragment = fragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
+                val childFragmentManager = hostFragment?.childFragmentManager
+                val fragments = childFragmentManager?.fragments
+                fragments?.forEach { item ->
+                    if(item is TestFragment) {
+                        item.reset()
+                    }
+                }
                 return true
             }
             else -> super.onOptionsItemSelected(item)

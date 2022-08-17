@@ -1,14 +1,11 @@
 package de.domjos.gift_app.fragments
 
-import android.app.Activity
-import android.app.Application
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat.recreate
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import de.domjos.gift_app.R
@@ -23,6 +20,7 @@ import java.util.*
 class TestFragment : Fragment() {
     private lateinit var change: Question.OnChange
     private var _binding: FragmentTestBinding? = null
+    private lateinit var testAdapter: TestAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,29 +38,25 @@ class TestFragment : Fragment() {
 
         val viewPager = _binding?.viewPager
 
-        var testAdapter: TestAdapter? = null
-
         this.change = object: Question.OnChange {
             override fun change() {
-                if(testAdapter != null) {
-                    var hasQuestions = false
-                    for(i in 0 until tbl?.tabCount!!) {
-                        val count = testAdapter?.getUnsetCount(i)!!
-                        if(count != 0) {
-                            val badge = tbl.getTabAt(i)?.orCreateBadge
-                            badge?.number = count
-                            hasQuestions = true
-                        } else {
-                            tbl.getTabAt(i)?.removeBadge()
-                        }
+                var hasQuestions = false
+                for(i in 0 until tbl?.tabCount!!) {
+                    val count = testAdapter.getUnsetCount(i)!!
+                    if(count != 0) {
+                        val badge = tbl.getTabAt(i)?.orCreateBadge
+                        badge?.number = count
+                        hasQuestions = true
+                    } else {
+                        tbl.getTabAt(i)?.removeBadge()
                     }
-
-                    binding.cmdReport.isEnabled = !hasQuestions
                 }
+
+                binding.cmdReport.isEnabled = !hasQuestions
             }
         }
 
-       testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, this.change)}!!
+        testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, this.change)}!!
         viewPager?.adapter = context?.let { testAdapter }
         viewPager?.offscreenPageLimit = 6
         tbl?.setupWithViewPager(viewPager)
@@ -103,6 +97,10 @@ class TestFragment : Fragment() {
             }
             controller.navigate(R.id.action_SecondFragment_to_ThirdFragment, args)
         }
+    }
+
+    fun reset() {
+        testAdapter.reset()
     }
 
     override fun onDestroyView() {

@@ -56,6 +56,12 @@ class TestAdapter(fm: FragmentManager, private var context: Context, change: Que
         }
     }
 
+    fun reset() {
+        fragments.forEach { item ->
+            item.reset()
+        }
+    }
+
     fun getUnsetCount(position: Int): Int {
         return fragments[position].countUnsetQuestions()
     }

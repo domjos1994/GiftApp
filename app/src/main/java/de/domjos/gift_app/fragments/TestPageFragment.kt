@@ -35,6 +35,12 @@ open class TestPageFragment(private val page: String) : Fragment() {
         this.change = change
     }
 
+    fun reset() {
+        cl?.children?.forEach { item ->
+            (item as Question).setChoice(-1)
+        }
+    }
+
     fun countUnsetQuestions(): Int {
         var counter = 0
 
