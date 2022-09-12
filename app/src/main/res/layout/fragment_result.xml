@@ -10,6 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/cmdResultAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_all"/>
+
         <de.domjos.gift_app.customControls.GiftItem
             android:id="@+id/giAdministration"
             android:layout_width="match_parent"
