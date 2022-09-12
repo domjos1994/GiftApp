@@ -41,7 +41,12 @@ class GiftItem : ConstraintLayout {
     private fun getAttributes(attrs: AttributeSet?, context: Context) {
         try {
             val a = context.obtainStyledAttributes(attrs, R.styleable.GiftItem)
+            var points: Int = 0
+            if(a.hasValue(R.styleable.GiftItem_points)) {
+                points = a.getInt(R.styleable.GiftItem_points, 0)
+            }
             if (a.hasValue(R.styleable.GiftItem_header)) {
+                val format: String = ""
                 lblHeader.text = a.getString(R.styleable.GiftItem_header)
             }
             if (a.hasValue(R.styleable.GiftItem_description)) {

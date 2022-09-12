@@ -15,6 +15,7 @@
     </declare-styleable>
     <declare-styleable name="GiftItem">
         <attr name="header" format="string"/>
+        <attr name="points" format="integer"/>
         <attr name="description" format="string"/>
         <attr name="keyword" format="string"/>
         <attr name="target" format="string"/>

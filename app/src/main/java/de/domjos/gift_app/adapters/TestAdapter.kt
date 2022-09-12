@@ -78,7 +78,6 @@ class TestAdapter(fm: FragmentManager, private var context: Context, change: Que
                 results[i] = results[i] + list[i]
             }
         }
-        results.sort()
         return results
     }
 

@@ -32,6 +32,7 @@
     <string name="question_often">oft</string>
     <string name="question_much_often">sehr oft</string>
     <string name="question_always">immer</string>
+    <string name="question_result_points">Punkte</string>
     <string name="question_result_keyword">Schlüsselwort</string>
     <string name="question_result_negative">Negativ</string>
     <string name="question_result_target">Ziel</string>
