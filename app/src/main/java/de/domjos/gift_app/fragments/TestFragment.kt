@@ -51,7 +51,7 @@ class TestFragment : Fragment() {
                         tbl.getTabAt(i)?.removeBadge()
                     }
                 }
-
+                testAdapter.save()
                 binding.cmdReport.isEnabled = !hasQuestions
             }
         }

@@ -3,15 +3,40 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+// sdk versions
+def sdk = 34
+def min = 21
+
+// app version
+def code = 8
+def name = "1.1"
+
+// java version
+def java_code = '14'
+def java_version = JavaVersion.VERSION_14
+
+// library versions
+def ktx_core = "1.12.0"
+def ktx_ui = "2.7.7"
+def app_compat = "1.6.1"
+def material = "1.11.0"
+def constraint = "2.1.4"
+def flexbox = "3.0.0"
+
+// testing versions
+def junit = "4.13.2"
+def junit_ext = "1.1.5"
+def espresso = "3.5.1"
+
 android {
-    compileSdk 32
+    compileSdk sdk
 
     defaultConfig {
         applicationId "de.domjos.gift_app"
-        minSdk 21
-        targetSdk 32
-        versionCode 8
-        versionName "1.0"
+        minSdk min
+        targetSdk sdk
+        versionCode code
+        versionName name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,28 +48,29 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility java_version
+        targetCompatibility java_version
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = java_code
     }
     buildFeatures {
         viewBinding true
     }
+    namespace 'de.domjos.gift_app'
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
-    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation "androidx.core:core-ktx:${ktx_core}"
+    implementation "androidx.appcompat:appcompat:${app_compat}"
+    implementation "com.google.android.material:material:${material}"
+    implementation "androidx.constraintlayout:constraintlayout:${constraint}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${ktx_ui}"
+    implementation "androidx.navigation:navigation-ui-ktx:${ktx_ui}"
+    implementation "com.google.android.flexbox:flexbox:${flexbox}"
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "junit:junit:${junit}"
+    androidTestImplementation "androidx.test.ext:junit:${junit_ext}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso}"
 }
