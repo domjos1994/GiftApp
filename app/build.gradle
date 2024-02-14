@@ -57,6 +57,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'de.domjos.gift_app'
 }
 
 dependencies {
