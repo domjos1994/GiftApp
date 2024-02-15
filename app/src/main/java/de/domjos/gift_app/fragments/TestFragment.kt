@@ -1,11 +1,13 @@
 package de.domjos.gift_app.fragments
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -32,6 +34,7 @@ class TestFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -68,14 +71,24 @@ class TestFragment : Fragment() {
         }
 
         TabLayoutMediator(tbl, viewPager) { tab, position ->
-            tab.text = when(position) {
-                0 -> context?.getString(R.string.test_page1)
-                1 -> context?.getString(R.string.test_page2)
-                2 -> context?.getString(R.string.test_page3)
-                3 -> context?.getString(R.string.test_page4)
-                4 -> context?.getString(R.string.test_page5)
-                5 -> context?.getString(R.string.test_page6)
+            val ctx = requireContext()
+            tab.contentDescription = when(position) {
+                0 -> ctx.getString(R.string.test_page1)
+                1 -> ctx.getString(R.string.test_page2)
+                2 -> ctx.getString(R.string.test_page3)
+                3 -> ctx.getString(R.string.test_page4)
+                4 -> ctx.getString(R.string.test_page5)
+                5 -> ctx.getString(R.string.test_page6)
                 else -> ""
+            }
+            tab.icon = when(position) {
+                0 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_1)
+                1 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_2)
+                2 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_3)
+                3 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_4)
+                4 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_5)
+                5 -> AppCompatResources.getDrawable(ctx, R.drawable.counter_6)
+                else -> null
             }
         }.attach()
 
