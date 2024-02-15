@@ -22,11 +22,17 @@ def app_compat = "1.6.1"
 def material = "1.11.0"
 def constraint = "2.1.4"
 def flexbox = "3.0.0"
+def okhttp = "4.12.0"
+def gson = "2.10"
 
 // testing versions
 def junit = "4.13.2"
 def junit_ext = "1.1.5"
 def espresso = "3.5.1"
+
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 android {
     compileSdk sdk
@@ -37,6 +43,9 @@ android {
         targetSdk sdk
         versionCode code
         versionName name
+
+        buildConfigField("String", "BIBLE_API_KEY", apikeyProperties['bible_api_key'])
+        buildConfigField("String", "BIBLE_API_URL", apikeyProperties['bible_api_url'])
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,6 +65,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
     namespace 'de.domjos.gift_app'
 }
@@ -69,6 +79,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:${ktx_ui}"
     implementation "androidx.navigation:navigation-ui-ktx:${ktx_ui}"
     implementation "com.google.android.flexbox:flexbox:${flexbox}"
+    implementation "com.squareup.okhttp3:okhttp:${okhttp}"
+    implementation "com.google.code.gson:gson:${gson}"
 
     testImplementation "junit:junit:${junit}"
     androidTestImplementation "androidx.test.ext:junit:${junit_ext}"
