@@ -2,9 +2,6 @@ package de.domjos.gift_app.customControls
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
-import android.text.Html
-import android.text.Spannable
 import android.text.Spanned
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -21,6 +18,7 @@ class GiftItem : ConstraintLayout {
     private lateinit var lblTarget: TextView
     private lateinit var lblNegative: TextView
     private lateinit var lblBible: TextView
+    private var header: String = ""
 
     constructor(context: Context) : super(context) {
         this.initView()
@@ -41,13 +39,15 @@ class GiftItem : ConstraintLayout {
     private fun getAttributes(attrs: AttributeSet?, context: Context) {
         try {
             val a = context.obtainStyledAttributes(attrs, R.styleable.GiftItem)
-            var points: Int = 0
+            var points = 0
             if(a.hasValue(R.styleable.GiftItem_points)) {
                 points = a.getInt(R.styleable.GiftItem_points, 0)
             }
             if (a.hasValue(R.styleable.GiftItem_header)) {
-                val format: String = ""
-                lblHeader.text = a.getString(R.styleable.GiftItem_header)
+                this.header = a.getString(R.styleable.GiftItem_header).toString()
+                val label = context.getString(R.string.question_result_points)
+                val line = "$label: $points  -  $header"
+                lblHeader.text = line
             }
             if (a.hasValue(R.styleable.GiftItem_description)) {
                 val content: Spanned? = a.getString(R.styleable.GiftItem_description)
@@ -67,6 +67,12 @@ class GiftItem : ConstraintLayout {
                 lblBible.text = a.getString(R.styleable.GiftItem_bible)
             }
         } catch (ex: Exception) {}
+    }
+
+    fun setPoints(points: Int) {
+        val label = context.getString(R.string.question_result_points)
+        val line = "$label: $points  -  $header"
+        lblHeader.text = line
     }
 
     private fun initView() {

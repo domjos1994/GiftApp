@@ -10,6 +10,7 @@
 
     // main
     <string name="main_start">Start test</string>
+    <string name="main_all">Show all</string>
     <string name="main_header">Gift-Test</string>
     <string name="main_content">Start the Gift-Test here!</string>
     <string name="main_daily_url">https://www.biblegateway.com/usage/votd/rss/votd.rdf?31</string>
