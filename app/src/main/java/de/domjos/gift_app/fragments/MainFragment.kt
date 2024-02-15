@@ -24,6 +24,7 @@ class MainFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var taskRunner: TaskRunner
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
@@ -34,7 +35,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         try {
-            val taskRunner = TaskRunner()
+            taskRunner = TaskRunner()
             val impl = object : Callback<DailyVerse.JsonVerse?> {
                 override fun onComplete(result: DailyVerse.JsonVerse?) {
                     if(result != null) {
@@ -57,6 +58,11 @@ class MainFragment : Fragment() {
         binding.cmdMainStart.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        taskRunner.cancel()
     }
 
     fun showButtonText() {

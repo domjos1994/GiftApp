@@ -2,6 +2,8 @@ package de.domjos.gift_app.services
 
 import android.os.Handler
 import android.os.Looper
+import kotlinx.coroutines.asCoroutineDispatcher
+import kotlinx.coroutines.cancel
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
@@ -18,5 +20,9 @@ class TaskRunner {
             val result: DailyVerse.JsonVerse? = callable?.call()
             handler.post { callBack.onComplete(result) }
         }
+    }
+
+    fun cancel() {
+        executor.asCoroutineDispatcher().cancel()
     }
 }

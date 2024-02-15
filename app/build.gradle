@@ -8,7 +8,7 @@ def sdk = 34
 def min = 21
 
 // app version
-def code = 8
+def code = 10
 def name = "1.1"
 
 // java version
