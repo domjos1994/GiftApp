@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.databinding.FragmentTestPage1Binding
 import de.domjos.gift_app.fragments.TestPageFragment
 

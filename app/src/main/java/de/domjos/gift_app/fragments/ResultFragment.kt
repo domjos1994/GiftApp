@@ -41,7 +41,7 @@ class ResultFragment : Fragment() {
         }
     }
 
-    fun updateQuestions(all: Boolean) {
+    private fun updateQuestions(all: Boolean) {
         val ll: LinearLayout = _binding!!.llMain
 
         if(all) {
@@ -50,7 +50,7 @@ class ResultFragment : Fragment() {
                     this.arguments?.getInt(i.toString())
                         ?.let { (ll.getChildAt(i) as GiftItem).setPoints(it) }
                     ll.getChildAt(i).visibility = VISIBLE
-                } catch (ex: Exception) {}
+                } catch (_: Exception) {}
             }
         } else {
             for(i in 0..14) {
@@ -58,7 +58,7 @@ class ResultFragment : Fragment() {
                     this.arguments?.getInt(i.toString())
                         ?.let { (ll.getChildAt(i) as GiftItem).setPoints(it) }
                     ll.getChildAt(i).visibility = GONE
-                } catch (ex: Exception) {}
+                } catch (_: Exception) {}
             }
 
             var item1 = -1

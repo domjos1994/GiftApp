@@ -10,6 +10,7 @@ import de.domjos.gift_app.Helper
 import de.domjos.gift_app.services.DailyVerse
 import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.FragmentMainBinding
+import de.domjos.gift_app.services.Settings
 import de.domjos.gift_app.services.TaskRunner
 import de.domjos.gift_app.services.TaskRunner.Callback
 
@@ -52,8 +53,28 @@ class MainFragment : Fragment() {
             binding.lblDailyVerseContent.text = ex.toString()
         }
 
+        showButtonText()
         binding.cmdMainStart.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+    }
+
+    fun showButtonText() {
+        val settings = Settings(requireContext())
+        var hasChanges = false
+        for (i in 1..6) {
+            for (j in 1..15) {
+                val result = settings.getSetting("page$i$j", -1)
+                if(result != -1) {
+                    hasChanges = true
+                    break
+                }
+            }
+        }
+        if(hasChanges) {
+            binding.cmdMainStart.text = requireContext().getString(R.string.main_continue)
+        } else {
+            binding.cmdMainStart.text = requireContext().getString(R.string.main_start)
         }
     }
 

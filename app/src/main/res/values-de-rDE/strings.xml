@@ -10,6 +10,7 @@
 
     // main
     <string name="main_start">Test starten</string>
+    <string name="main_continue">Test fortsetzen</string>
     <string name="main_all">Alles anzeigen</string>
     <string name="main_header">Gaben-Test</string>
     <string name="main_content">Starten Sie den Gaben-Test hier!</string>

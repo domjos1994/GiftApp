@@ -4,7 +4,6 @@ import android.content.Context
 import de.domjos.gift_app.R
 import org.w3c.dom.Document
 import org.w3c.dom.Element
-import org.w3c.dom.Node
 import org.w3c.dom.NodeList
 import org.xml.sax.InputSource
 import java.net.URL
@@ -45,7 +44,7 @@ class DailyVerse(val context: Context) : Callable<DailyVerse.JsonVerse> {
             for (i in 0 until nodeList.length) {
                 return nodeList.item(i).textContent
             }
-        } catch (ex: Exception) {}
+        } catch (_: Exception) {}
         return ""
     }
 

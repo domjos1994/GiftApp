@@ -47,10 +47,6 @@ class Question : ConstraintLayout {
         this.change = change
     }
 
-    fun getChange(): OnChange? {
-        return this.change
-    }
-
     interface OnChange {
         fun change()
     }
@@ -67,7 +63,7 @@ class Question : ConstraintLayout {
             if(a.hasValue(R.styleable.Question_choice)) {
                 setChoice(a.getInt(R.styleable.Question_choice, -1))
             }
-        } catch (ex: Exception) {}
+        } catch (_: Exception) {}
     }
 
     fun getChoice(): Int {
@@ -95,10 +91,6 @@ class Question : ConstraintLayout {
             5 -> setView(lblMuchOften, true)
             6 -> setView(lblAlways, true)
         }
-    }
-
-    fun getText(): String {
-        return text
     }
 
     private fun initView() {

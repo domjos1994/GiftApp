@@ -66,7 +66,7 @@ class GiftItem : ConstraintLayout {
             if (a.hasValue(R.styleable.GiftItem_bible)) {
                 lblBible.text = a.getString(R.styleable.GiftItem_bible)
             }
-        } catch (ex: Exception) {}
+        } catch (_: Exception) {}
     }
 
     fun setPoints(points: Int) {
