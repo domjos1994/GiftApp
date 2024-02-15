@@ -3,14 +3,15 @@ package de.domjos.gift_app.adapters
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import de.domjos.gift_app.R
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.fragments.*
 import de.domjos.gift_app.fragments.testPageImpl.*
 import java.util.*
 
-class TestAdapter(fm: FragmentManager, private var context: Context, change: Question.OnChange) : FragmentPagerAdapter(fm) {
+class TestAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle, private var context: Context, change: Question.OnChange)
+    : FragmentStateAdapter(fragmentManager, lifecycle) {
     private var fragments: LinkedList<TestPageFragment> = LinkedList<TestPageFragment>()
 
     init {
@@ -31,23 +32,6 @@ class TestAdapter(fm: FragmentManager, private var context: Context, change: Que
             fragments[i].setChange(change)
         }
         change.change()
-    }
-
-    override fun getCount(): Int {
-        return 6
-    }
-
-    override fun getPageTitle(position: Int): CharSequence? {
-
-        when(position) {
-            0 -> return context.getString(R.string.test_page1)
-            1 -> return context.getString(R.string.test_page2)
-            2 -> return context.getString(R.string.test_page3)
-            3 -> return context.getString(R.string.test_page4)
-            4 -> return context.getString(R.string.test_page5)
-            5 -> return context.getString(R.string.test_page6)
-        }
-        return ""
     }
 
     fun save() {
@@ -80,8 +64,11 @@ class TestAdapter(fm: FragmentManager, private var context: Context, change: Que
         }
         return results
     }
+    override fun getItemCount(): Int {
+        return 6
+    }
 
-    override fun getItem(position: Int): Fragment {
+    override fun createFragment(position: Int): Fragment {
         return fragments[position]
     }
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import de.domjos.gift_app.R
 import de.domjos.gift_app.adapters.TestAdapter
 import de.domjos.gift_app.customControls.Question
@@ -34,15 +35,15 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tbl: TabLayout? = _binding?.tblQuestions
+        val tbl: TabLayout = _binding?.tblQuestions!!
 
-        val viewPager = _binding?.viewPager
+        val viewPager = _binding?.viewPager!!
 
         this.change = object: Question.OnChange {
             override fun change() {
                 var hasQuestions = false
-                for(i in 0 until tbl?.tabCount!!) {
-                    val count = testAdapter.getUnsetCount(i)!!
+                for(i in 0 until tbl.tabCount) {
+                    val count = testAdapter.getUnsetCount(i)
                     if(count != 0) {
                         val badge = tbl.getTabAt(i)?.orCreateBadge
                         badge?.number = count
@@ -56,15 +57,27 @@ class TestFragment : Fragment() {
             }
         }
 
-        testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, it, this.change)}!!
-        viewPager?.adapter = context?.let { testAdapter }
-        viewPager?.offscreenPageLimit = 6
-        tbl?.setupWithViewPager(viewPager)
+        testAdapter = context?.applicationContext?.let { TestAdapter(childFragmentManager, lifecycle, it, this.change)}!!
+        viewPager.adapter = context?.let { testAdapter }
+        viewPager.offscreenPageLimit = 6
 
-        for(i in 0 until tbl?.tabCount!!) {
+
+        for(i in 0 until tbl.tabCount) {
             val badge = tbl.getTabAt(i)?.orCreateBadge
             badge?.number = 15
         }
+
+        TabLayoutMediator(tbl, viewPager) { tab, position ->
+            tab.text = when(position) {
+                0 -> context?.getString(R.string.test_page1)
+                1 -> context?.getString(R.string.test_page2)
+                2 -> context?.getString(R.string.test_page3)
+                3 -> context?.getString(R.string.test_page4)
+                4 -> context?.getString(R.string.test_page5)
+                5 -> context?.getString(R.string.test_page6)
+                else -> ""
+            }
+        }.attach()
 
         val controller = findNavController()
 
