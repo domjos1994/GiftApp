@@ -58,6 +58,10 @@ class MainFragment : Fragment() {
         binding.cmdMainStart.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        binding.cmdMainBible.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_FourthFragment)
+        }
     }
 
     override fun onDestroy() {

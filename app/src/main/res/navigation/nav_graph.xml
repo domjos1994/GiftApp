@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_FourthFragment"
+            app:destination="@+id/FourthFragment"/>
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -37,5 +40,14 @@
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FourthFragment"
+        android:name="de.domjos.gift_app.fragments.BibleFragment"
+        android:label="@string/bible"
+        tools:layout="@layout/fragment_bible">
+        <action
+            android:id="@+id/action_FourthFragment_to_FirstFragment"
+            app:destination="@+id/FirstFragment"/>
     </fragment>
 </navigation>

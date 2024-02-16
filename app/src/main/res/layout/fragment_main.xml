@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cmdMainStart"
+        app:layout_constraintBottom_toTopOf="@+id/cmdMainBible"
         android:orientation="vertical">
         <TextView
             android:id="@+id/lblDailyVerseHeader"
@@ -40,6 +40,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/cmdMainBible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bible"
+        android:layout_margin="@dimen/button_margin"
+        app:layout_constraintBottom_toTopOf="@+id/cmdMainStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/cmdMainStart"

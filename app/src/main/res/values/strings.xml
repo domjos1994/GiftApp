@@ -49,4 +49,7 @@
             </p>
         ]]>
     </string>
+
+    // bible
+    <string name="bible">Bible</string>
 </resources>
