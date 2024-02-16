@@ -1,10 +1,30 @@
 package de.domjos.gift_app.model
 
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.Index
+
+@Entity(
+    tableName = "bibles",
+    indices = [
+        Index(value=["id"], orders = [Index.Order.ASC], name = "pk_bible_id", unique = true)
+    ],
+    inheritSuperIndices = false,
+    primaryKeys = ["id"]
+)
 data class BibleSummary(
-    val id: String, val dblId: String, val abbreviation: String, val abbreviationLocal: String,
-    val language: Language, val countries: Array<Country>, val name: String, val nameLocal: String,
-    val description: String, val descriptionLocal: String, val relatedDbl: String, val type: String,
-    val updatedAt: String, val audioBibles: Array<AudioBibleSummary>) {
+    var id: String, var dblId: String, var abbreviation: String, var abbreviationLocal: String,
+    @Ignore var language: Language?, @Ignore var countries: Array<Country>, var name: String, var nameLocal: String,
+    var description: String, var descriptionLocal: String, var relatedDbl: String, var type: String,
+    var updatedAt: String, @Ignore var audioBibles: Array<AudioBibleSummary>) {
+
+    constructor(
+        id: String, dblId: String, abbreviation: String, abbreviationLocal: String,
+        name: String, nameLocal: String, description: String, descriptionLocal: String,
+        relatedDbl: String, type: String, updatedAt: String) :
+            this(id, dblId, abbreviation, abbreviationLocal, null,
+                arrayOf(), name, nameLocal, description, descriptionLocal, relatedDbl, type, updatedAt, arrayOf())
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

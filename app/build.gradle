@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id("com.google.devtools.ksp") version "1.9.22-1.0.17"
 }
 
 // sdk versions
@@ -24,6 +25,7 @@ def constraint = "2.1.4"
 def flexbox = "3.0.0"
 def okhttp = "4.12.0"
 def gson = "2.10"
+def room = "2.6.1"
 
 // testing versions
 def junit = "4.13.2"
@@ -81,8 +83,12 @@ dependencies {
     implementation "com.google.android.flexbox:flexbox:${flexbox}"
     implementation "com.squareup.okhttp3:okhttp:${okhttp}"
     implementation "com.google.code.gson:gson:${gson}"
+    implementation "androidx.room:room-runtime:${room}"
+    annotationProcessor "androidx.room:room-compiler:${room}"
+    ksp "androidx.room:room-compiler:${room}"
 
     testImplementation "junit:junit:${junit}"
     androidTestImplementation "androidx.test.ext:junit:${junit_ext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${espresso}"
+    androidTestImplementation "androidx.room:room-testing:${room}"
 }
