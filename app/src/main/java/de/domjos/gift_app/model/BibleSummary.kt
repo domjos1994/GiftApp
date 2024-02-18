@@ -64,4 +64,8 @@ data class BibleSummary(
         result = 31 * result + audioBibles.contentHashCode()
         return result
     }
+
+    override fun toString(): String {
+        return name
+    }
 }

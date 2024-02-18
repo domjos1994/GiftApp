@@ -52,4 +52,13 @@
 
     // bible
     <string name="bible">Bible</string>
+    <string name="bible_choice">Bibles</string>
+    <string name="bible_books">Books</string>
+    <string name="bible_chapters">Chapters</string>
+    <string name="bible_next">Next</string>
+    <string name="bible_previous">Previous</string>
+    <string name="bible_search">Search</string>
+    <string name="bible_item_title">Title</string>
+    <string name="bible_item_title_sub">Sub-Title</string>
+    <string name="bible_item_icon" translatable="false">Bible-Item-Icon</string>
 </resources>

@@ -52,4 +52,12 @@
 
     // bible
     <string name="bible">Bibel</string>
+    <string name="bible_choice">Bibeln</string>
+    <string name="bible_books">Bücher</string>
+    <string name="bible_chapters">Kapitel</string>
+    <string name="bible_next">Danach</string>
+    <string name="bible_previous">Davor</string>
+    <string name="bible_search">Suche</string>
+    <string name="bible_item_title">Titel</string>
+    <string name="bible_item_title_sub">Untertitel</string>
 </resources>

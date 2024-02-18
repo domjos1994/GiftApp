@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,4 +8,111 @@
     android:background="@drawable/background_image"
     tools:context=".fragments.BibleFragment">
 
+
+    <LinearLayout
+        android:id="@+id/pnlBibleChoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bible_choice"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:padding="10sp"/>
+        <Spinner
+            android:id="@+id/spBibleChoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pnlBibleBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pnlBibleChoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bible_books"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:padding="10sp"/>
+        <Spinner
+            android:id="@+id/spBibleBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pnlBibleChapters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pnlBibleBooks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bible_chapters"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:padding="10sp"/>
+        <Spinner
+            android:id="@+id/spBibleChapters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblBibleContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#80ffffff"
+        android:scrollbars="vertical"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/pnlBibleChapters"
+        app:layout_constraintBottom_toTopOf="@+id/lblBibleCopyright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/lblBibleCopyright"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#80ffffff"
+        android:scrollbars="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/pnlBibleNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/pnlBibleNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageButton
+            android:id="@+id/cmdBiblePrevious"
+            android:src="@drawable/baseline_navigate_before_24"
+            android:contentDescription="@string/bible_previous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <ImageButton
+            android:id="@+id/cmdBibleNext"
+            android:src="@drawable/baseline_navigate_next_24"
+            android:contentDescription="@string/bible_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

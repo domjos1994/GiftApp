@@ -13,6 +13,7 @@ import de.domjos.gift_app.databinding.FragmentMainBinding
 import de.domjos.gift_app.services.Settings
 import de.domjos.gift_app.services.TaskRunner
 import de.domjos.gift_app.services.TaskRunner.Callback
+import java.util.concurrent.Callable
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -48,7 +49,8 @@ class MainFragment : Fragment() {
                     }
                 }
             }
-            taskRunner.executeAsync(this.context?.let { DailyVerse(it) }, impl)
+            val ctx = requireContext()
+            taskRunner.executeAsync(DailyVerse(ctx) as Callable<DailyVerse.JsonVerse?>, impl)
         } catch (ex: Exception) {
             binding.lblDailyVerseHeader.text = ex.message
             binding.lblDailyVerseContent.text = ex.toString()
