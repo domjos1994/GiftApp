@@ -3,8 +3,13 @@ package de.domjos.gift_app.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.MenuProvider
 import androidx.navigation.fragment.findNavController
 import de.domjos.gift_app.Helper
 import de.domjos.gift_app.services.DailyVerse
@@ -34,6 +39,28 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_main, menu)
+                menu.findItem(R.id.search).isVisible = false
+                menu.findItem(R.id.action_reset).isVisible = false
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.action_impress -> {
+                        val alert = AlertDialog.Builder(requireContext())
+                        alert.setMessage(Helper.showHtml(getString(R.string.impress_content)))
+                        alert.create().show()
+                        true
+                    }
+
+                    else -> {
+                        false
+                    }
+                }
+            }
+        }, viewLifecycleOwner)
 
         try {
             taskRunner = TaskRunner()

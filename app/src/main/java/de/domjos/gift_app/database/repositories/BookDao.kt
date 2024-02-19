@@ -15,6 +15,9 @@ interface BookDao {
     @Query("SELECT * FROM books where id=:id")
     fun getById(id: String): Book
 
+    @Query("SELECT * FROM books where bibleId=:bibleId")
+    fun getByBible(bibleId: String): List<Book>
+
     @Insert
     fun insert(book: Book)
 

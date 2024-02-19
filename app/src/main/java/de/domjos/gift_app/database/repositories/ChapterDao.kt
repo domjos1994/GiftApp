@@ -33,6 +33,9 @@ interface ChapterDao {
     @Query("SELECT * FROM chapter_summaries where id=:id")
     fun getSummaryById(id: String): ChapterSummary
 
+    @Query("SELECT * FROM chapter_summaries where bibleId=:bibleId and bookId=:bookId")
+    fun getById(bibleId: String, bookId: String): List<ChapterSummary>
+
     @Insert
     fun insertSummary(chapter: ChapterSummary)
 

@@ -9,8 +9,8 @@ def sdk = 34
 def min = 21
 
 // app version
-def code = 10
-def name = "1.1"
+def code = 13
+def name = "2.0"
 
 // java version
 def java_code = '14'
@@ -50,6 +50,10 @@ android {
         buildConfigField("String", "BIBLE_API_URL", apikeyProperties['bible_api_url'])
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     buildTypes {

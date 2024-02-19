@@ -1,5 +1,6 @@
 package de.domjos.gift_app.database
 
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import de.domjos.gift_app.database.repositories.BibleDao
@@ -24,7 +25,8 @@ import de.domjos.gift_app.model.VerseSummary
     BibleSummary::class, Book::class, Chapter::class,
     ChapterSummary::class, Country::class, Language::class,
     Passage::class, Section::class, SectionSummary::class,
-    Verse::class, VerseSummary::class], version = 1)
+    Verse::class, VerseSummary::class], version = 1,
+    exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun bibleDao(): BibleDao
     abstract fun bookDao(): BookDao

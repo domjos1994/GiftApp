@@ -7,9 +7,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.MediaController
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.MenuProvider
+import androidx.navigation.NavController
 import de.domjos.gift_app.Helper
 import de.domjos.gift_app.R
 import de.domjos.gift_app.databinding.ActivityMainBinding
@@ -31,45 +35,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val alert = AlertDialog.Builder(this)
-        alert.setMessage(Helper.showHtml(getString(R.string.impress_content)))
-
-        return when (item.itemId) {
-            R.id.action_impress -> {
-                alert.create().show()
-                return true
-            }
-            R.id.action_reset -> {
-                Settings(this.applicationContext).reset()
-
-                Toast.makeText(this.applicationContext, R.string.reset_msg, Toast.LENGTH_LONG).show()
-
-                val fragmentManager = supportFragmentManager
-                val hostFragment = fragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
-                val childFragmentManager = hostFragment?.childFragmentManager
-                val fragments = childFragmentManager?.fragments
-                fragments?.forEach { fItem ->
-                    if(fItem is TestFragment) {
-                        fItem.reset()
-                    }
-                    if(fItem is MainFragment) {
-                        fItem.showButtonText()
-                    }
-                }
-
-                return true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

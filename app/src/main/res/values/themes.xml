@@ -31,5 +31,10 @@
         <item name="android:textColorPrimary">@color/color_primary_on</item>
     </style>
 
+    <style name="Theme.GiftApp.ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:backgroundTint">@color/color_primary</item>
+        <item name="android:filter">@color/color_primary_on</item>
+    </style>
+
     <style name="Theme.GiftApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

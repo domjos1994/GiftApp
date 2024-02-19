@@ -1,17 +1,20 @@
 package de.domjos.gift_app.fragments
 
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import de.domjos.gift_app.R
 import de.domjos.gift_app.adapters.CustomArrayAdapter
@@ -21,6 +24,9 @@ import de.domjos.gift_app.model.BibleSummary
 import de.domjos.gift_app.model.Book
 import de.domjos.gift_app.model.Chapter
 import de.domjos.gift_app.model.ChapterSummary
+import de.domjos.gift_app.model.Passage
+import de.domjos.gift_app.model.Verse
+import de.domjos.gift_app.services.Settings
 import de.domjos.gift_app.services.TaskRunner
 
 
@@ -35,7 +41,7 @@ class BibleFragment : Fragment() {
     private var chapter: Chapter? = null
 
     private lateinit var spBibleChoice: Spinner
-    private lateinit var lblBibleContent: TextView
+    private lateinit var lblBibleContent: WebView
     private lateinit var lblBibleCopyright: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -55,8 +61,6 @@ class BibleFragment : Fragment() {
 
         val cmdBibleNext = binding.cmdBibleNext
         val cmdBiblePrevious = binding.cmdBiblePrevious
-
-        lblBibleContent.movementMethod = ScrollingMovementMethod()
 
         val ctx = requireContext()
         service = BibleService(ctx)
@@ -160,9 +164,46 @@ class BibleFragment : Fragment() {
                 print(ex)
             }
         }
+
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_main, menu)
+                menu.findItem(R.id.action_impress).isVisible = false
+                menu.findItem(R.id.action_reset).isVisible = false
+
+                val item = menu.findItem(R.id.search)
+                val searchView = item.actionView as SearchView
+                searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(p0: String?): Boolean {
+                        service?.search(object: TaskRunner.Callback<List<Verse>?> {
+                            override fun onComplete(result: List<Verse>?) {
+                                var content = ""
+                                result?.forEach { item -> content += item.reference + "<br/>" + item.content + "<br/>" + item.copyright + "<br/><hr/>" }
+
+                                lblBibleContent.loadData(content, "text/html", "UTF-8")
+                            }
+                        }, bibleAdapter.getItem(spBibleChoice.selectedItemPosition)?.id!!, p0!!)
+                        return true
+                    }
+                    override fun onQueryTextChange(p0: String?): Boolean {
+                        return true
+                    }
+                })
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.search -> {
+                        true
+                    }
+
+                    else -> {
+                        false
+                    }
+                }
+            }
+        }, viewLifecycleOwner)
     }
 
-    @Suppress("DEPRECATION")
     private fun setChapter(id: String) {
         try {
             val bibleItem = bibleAdapter.getItem(spBibleChoice.selectedItemPosition)
@@ -170,12 +211,15 @@ class BibleFragment : Fragment() {
             service?.getChapter(object: TaskRunner.Callback<Chapter?> {
                 override fun onComplete(result: Chapter?) {
                     chapter = result
-                    lblBibleContent.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Html.fromHtml(result?.content, Html.FROM_HTML_MODE_LEGACY)
-                    } else {
-                        Html.fromHtml(result?.content)
-                    }
-                    lblBibleCopyright.text = result?.copyright
+                    lblBibleContent.loadData(result?.content!!, "text/html", "UTF-8")
+                    lblBibleCopyright.text = result.copyright
+
+                    service?.saveData(
+                        object: TaskRunner.Callback<Unit?> {override fun onComplete(result: Unit?) {}},
+                        chapter!!,
+                        bookAdapter.getItem(spBibleChoice.selectedItemPosition)!!,
+                        bibleAdapter.getItem(spBibleChoice.selectedItemPosition)!!
+                    )
                 }
             }, bibleItem?.id!!, id)
         } catch(ex: Exception) {

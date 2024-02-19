@@ -70,7 +70,7 @@
             android:padding="10sp"/>
     </LinearLayout>
 
-    <TextView
+    <WebView
         android:id="@+id/lblBibleContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -86,7 +86,7 @@
         android:id="@+id/lblBibleCopyright"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="#80ffffff"
+        android:background="#ccffffff"
         android:scrollbars="vertical"
         android:padding="2dp"
         app:layout_constraintBottom_toTopOf="@id/pnlBibleNavigation"
@@ -106,13 +106,15 @@
             android:contentDescription="@string/bible_previous"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            style="@style/Theme.GiftApp.ImageButton"/>
         <ImageButton
             android:id="@+id/cmdBibleNext"
             android:src="@drawable/baseline_navigate_next_24"
             android:contentDescription="@string/bible_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            style="@style/Theme.GiftApp.ImageButton"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,12 +2,19 @@ package de.domjos.gift_app.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import de.domjos.gift_app.Helper
+import de.domjos.gift_app.R
 import de.domjos.gift_app.customControls.GiftItem
 import de.domjos.gift_app.databinding.FragmentResultBinding
 
@@ -31,6 +38,18 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_main, menu)
+                menu.findItem(R.id.search).isVisible = false
+                menu.findItem(R.id.action_reset).isVisible = false
+                menu.findItem(R.id.action_impress).isVisible = false
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return false
+            }
+        }, viewLifecycleOwner)
 
         updateQuestions(false)
 

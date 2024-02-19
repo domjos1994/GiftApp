@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import de.domjos.gift_app.model.Passage
 import de.domjos.gift_app.model.Verse
 import de.domjos.gift_app.model.VerseSummary
 
@@ -16,6 +17,9 @@ interface VerseDao {
 
     @Query("SELECT * FROM verses where id=:id")
     fun getById(id: String): Verse
+
+    @Query("SELECT * FROM verses where content like :query and bibleId=:id")
+    fun getByQuery(query: String, id: String): List<Verse>
 
     @Insert
     fun insert(verse: Verse)

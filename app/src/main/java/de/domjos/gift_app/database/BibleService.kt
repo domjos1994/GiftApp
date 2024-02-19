@@ -10,8 +10,11 @@ import de.domjos.gift_app.model.BibleSummary
 import de.domjos.gift_app.model.Book
 import de.domjos.gift_app.model.Chapter
 import de.domjos.gift_app.model.ChapterSummary
+import de.domjos.gift_app.model.Passage
+import de.domjos.gift_app.model.Verse
 import de.domjos.gift_app.services.BibleAPIService
 import de.domjos.gift_app.services.TaskRunner
+import java.io.Console
 import java.util.concurrent.Callable
 
 class BibleService(private val context: Context) {
@@ -62,7 +65,7 @@ class BibleService(private val context: Context) {
                     )
                     response?.data?.toList()
                 } else {
-                    this.db.bookDao().getAll()
+                    this.db.bookDao().getByBible(id)
                 }
             }
             val taskRunner = TaskRunner()
@@ -79,7 +82,7 @@ class BibleService(private val context: Context) {
                     val response = this.service.getChapters(id, bookId)
                     response?.data?.toList()
                 } else {
-                    this.db.chapterDao().getAllSummaries()
+                    this.db.chapterDao().getById(id, bookId)
                 }
             }
             val taskRunner = TaskRunner()
@@ -105,6 +108,63 @@ class BibleService(private val context: Context) {
                     response?.data
                 } else {
                     this.db.chapterDao().getById(chapterId)
+                }
+            }
+            val taskRunner = TaskRunner()
+            taskRunner.executeAsync(callable, callback)
+        } catch (ex: Exception) {
+            Toast.makeText(this.context, ex.message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun saveData(callback: TaskRunner.Callback<Unit?>, chapter: Chapter, book: Book, bibleSummary: BibleSummary) {
+        val callable = Callable {
+            try {
+                if(this.db.chapterDao().getAll().count { it.id == chapter.id } ==0) {
+                    this.db.chapterDao().insert(chapter)
+                }
+                if(this.db.bookDao().getAll().count { it.id == book.id } ==0) {
+                    this.db.bookDao().insert(book)
+                }
+                if(this.db.bibleDao().getAll().count { it.id == bibleSummary.id } ==0) {
+                    if(bibleSummary.relatedDbl == "") {
+                        bibleSummary.relatedDbl = "Test"
+                    }
+                    this.db.bibleDao().insert(bibleSummary)
+                }
+            } catch (_: Exception) { }
+        }
+        val taskRunner = TaskRunner()
+        taskRunner.executeAsync(callable, callback)
+    }
+
+    fun search(callback: TaskRunner.Callback<List<Verse>?>, id: String, query: String) {
+        try {
+            val callable = Callable {
+                if(this.isNetworkConnected) {
+                    val response = this.service.search(id, query, 10, 0, BibleAPIService.SORTING.RELEVANCE, "")
+                    val results = response?.data?.verses?.toList()
+                    val lst = ArrayList<Verse>()
+                    results?.forEach {item ->
+                        this.service.getVerse(item.bibleId, item.id, BibleAPIService.FORMAT.HTML,
+                            notes = true,
+                            titles = true,
+                            chapterNumbers = true,
+                            verseNumbers = true,
+                            verseSpans = true,
+                            parallels = "",
+                            orgId = false
+                        )?.data?.let {
+                        lst.add(
+                            it
+                        )
+                    } }
+                    lst.forEach {item ->
+                        if(this.db.verseDao().getAll().none { it.id == item.id }) this.db.verseDao().insert(item)
+                    }
+                    lst
+                } else {
+                    this.db.verseDao().getByQuery(query, id)
                 }
             }
             val taskRunner = TaskRunner()

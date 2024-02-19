@@ -5,16 +5,24 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.MenuProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import de.domjos.gift_app.Helper
 import de.domjos.gift_app.R
 import de.domjos.gift_app.adapters.TestAdapter
 import de.domjos.gift_app.customControls.Question
 import de.domjos.gift_app.databinding.FragmentTestBinding
+import de.domjos.gift_app.services.Settings
 import java.util.*
 
 /**
@@ -123,6 +131,37 @@ class TestFragment : Fragment() {
             }
             controller.navigate(R.id.action_SecondFragment_to_ThirdFragment, args)
         }
+
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_main, menu)
+                menu.findItem(R.id.search).isVisible = false
+                menu.findItem(R.id.action_impress).isVisible = false
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                when (menuItem.itemId) {
+                    R.id.action_reset -> {
+                        Settings(requireContext()).reset()
+
+                        Toast.makeText(requireContext(), R.string.reset_msg, Toast.LENGTH_LONG).show()
+
+                        val childFragmentManager = childFragmentManager
+                        val fragments = childFragmentManager.fragments
+                        fragments.forEach { fItem ->
+                            if(fItem is TestPageFragment) {
+                                fItem.reset()
+                            }
+                            if(fItem is MainFragment) {
+                                fItem.showButtonText()
+                            }
+                        }
+
+                        return true
+                    }
+                    else -> {return false}
+                }
+            }
+        }, viewLifecycleOwner)
     }
 
     fun reset() {

@@ -1,5 +1,6 @@
 package de.domjos.gift_app.model
 
+import androidx.annotation.Nullable
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.Index
@@ -14,9 +15,9 @@ import androidx.room.Index
 )
 data class BibleSummary(
     var id: String, var dblId: String, var abbreviation: String, var abbreviationLocal: String,
-    @Ignore var language: Language?, @Ignore var countries: Array<Country>, var name: String, var nameLocal: String,
-    var description: String, var descriptionLocal: String, var relatedDbl: String, var type: String,
-    var updatedAt: String, @Ignore var audioBibles: Array<AudioBibleSummary>) {
+    @Ignore var language: Language?, @Ignore var countries: Array<Country>?, var name: String, var nameLocal: String,
+    var description: String, var descriptionLocal: String, var relatedDbl: String?, var type: String,
+    var updatedAt: String, @Ignore var audioBibles: Array<AudioBibleSummary>?) {
 
     constructor(
         id: String, dblId: String, abbreviation: String, abbreviationLocal: String,
