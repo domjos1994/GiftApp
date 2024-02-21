@@ -117,11 +117,14 @@ class BibleService(private val context: Context) {
         }
     }
 
-    fun saveData(callback: TaskRunner.Callback<Unit?>, chapter: Chapter, book: Book, bibleSummary: BibleSummary) {
+    fun saveData(callback: TaskRunner.Callback<Unit?>, chapter: Chapter, chapterSummary: ChapterSummary, book: Book, bibleSummary: BibleSummary) {
         val callable = Callable {
             try {
                 if(this.db.chapterDao().getAll().count { it.id == chapter.id } ==0) {
                     this.db.chapterDao().insert(chapter)
+                }
+                if(this.db.chapterDao().getAllSummaries().count { it.id == chapterSummary.id } ==0) {
+                    this.db.chapterDao().insertSummary(chapterSummary)
                 }
                 if(this.db.bookDao().getAll().count { it.id == book.id } ==0) {
                     this.db.bookDao().insert(book)

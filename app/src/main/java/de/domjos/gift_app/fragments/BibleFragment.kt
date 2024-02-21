@@ -24,9 +24,7 @@ import de.domjos.gift_app.model.BibleSummary
 import de.domjos.gift_app.model.Book
 import de.domjos.gift_app.model.Chapter
 import de.domjos.gift_app.model.ChapterSummary
-import de.domjos.gift_app.model.Passage
 import de.domjos.gift_app.model.Verse
-import de.domjos.gift_app.services.Settings
 import de.domjos.gift_app.services.TaskRunner
 
 
@@ -41,6 +39,8 @@ class BibleFragment : Fragment() {
     private var chapter: Chapter? = null
 
     private lateinit var spBibleChoice: Spinner
+    private lateinit var spBibleChapters: Spinner
+    private lateinit var spBibleBooks: Spinner
     private lateinit var lblBibleContent: WebView
     private lateinit var lblBibleCopyright: TextView
 
@@ -53,8 +53,8 @@ class BibleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         spBibleChoice = binding.spBibleChoice
-        val spBibleBooks = binding.spBibleBooks
-        val spBibleChapters = binding.spBibleChapters
+        spBibleBooks = binding.spBibleBooks
+        spBibleChapters = binding.spBibleChapters
 
         lblBibleContent = binding.lblBibleContent
         lblBibleCopyright = binding.lblBibleCopyright
@@ -214,11 +214,15 @@ class BibleFragment : Fragment() {
                     lblBibleContent.loadData(result?.content!!, "text/html", "UTF-8")
                     lblBibleCopyright.text = result.copyright
 
+                    val bibleSummary = bibleAdapter.getItem(spBibleChoice.selectedItemPosition)!!
+                    bibleSummary.relatedDbl = ""
+                    val chapterSummary = chapterAdapter.getItem(spBibleChapters.selectedItemPosition)!!
+                    val book = bookAdapter.getItem(spBibleBooks.selectedItemPosition)!!
+                    val fChapter = chapter!!
+
                     service?.saveData(
                         object: TaskRunner.Callback<Unit?> {override fun onComplete(result: Unit?) {}},
-                        chapter!!,
-                        bookAdapter.getItem(spBibleChoice.selectedItemPosition)!!,
-                        bibleAdapter.getItem(spBibleChoice.selectedItemPosition)!!
+                        fChapter, chapterSummary, book, bibleSummary
                     )
                 }
             }, bibleItem?.id!!, id)

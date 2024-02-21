@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "2c8056512bb12c86202ad2deb6a2dc27",
+    "identityHash": "6d78d259fddc1006a20a4ca29223f61c",
     "entities": [
       {
         "tableName": "bibles",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `dblId` TEXT NOT NULL, `abbreviation` TEXT NOT NULL, `abbreviationLocal` TEXT NOT NULL, `name` TEXT NOT NULL, `nameLocal` TEXT NOT NULL, `description` TEXT NOT NULL, `descriptionLocal` TEXT NOT NULL, `relatedDbl` TEXT, `type` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `dblId` TEXT NOT NULL, `abbreviation` TEXT NOT NULL, `abbreviationLocal` TEXT NOT NULL, `name` TEXT NOT NULL, `nameLocal` TEXT NOT NULL, `description` TEXT NOT NULL, `descriptionLocal` TEXT NOT NULL, `relatedDbl` TEXT DEFAULT '', `type` TEXT NOT NULL, `updatedAt` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -60,7 +60,8 @@
             "fieldPath": "relatedDbl",
             "columnName": "relatedDbl",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": false,
+            "defaultValue": "''"
           },
           {
             "fieldPath": "type",
@@ -768,7 +769,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2c8056512bb12c86202ad2deb6a2dc27')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6d78d259fddc1006a20a4ca29223f61c')"
     ]
   }
 }
